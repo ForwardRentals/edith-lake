@@ -18,18 +18,27 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --paper: #f5f2e8;          /* warm cream with a green cast */
-    --paper-dim: #eee9db;
-    --paper-pad: #e7e6d2;      /* pond-margin tint for boxed notes */
-    --ink: #1e1b15;
-    --ink-soft: #3d372c;
-    --ink-mute: #77705f;
-    --rule: #ddd6c3;
-    --rule-strong: #c3bba3;
-    --pad: #52693c;            /* lily-pad green */
-    --pad-deep: #33472a;
-    --gold: #b98a24;           /* dragonfly gold */
-    --pond: #7a6547;           /* soft pond-brown */
+    --bg: #fbfaf7;             /* Sea to Sky Trails brand */
+    --surface: #ffffff;
+    --sage: #eef1ea;
+    --line: #e3e1d8;
+    --ink: #22261f;
+    --ink-soft: #4c5245;
+    --mute: #8b9083;
+    --pine: #3d5a3f;
+    --pine-deep: #2c4230;
+    --sun: #c98f2d;
+    /* legacy aliases */
+    --paper: var(--bg);
+    --paper-dim: var(--sage);
+    --paper-pad: var(--sage);
+    --ink-mute: var(--mute);
+    --rule: var(--line);
+    --rule-strong: var(--line);
+    --pad: var(--pine);
+    --pad-deep: var(--pine);
+    --gold: var(--sun);
+    --pond: var(--ink-soft);
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -41,7 +50,7 @@
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
-  ::selection { background: var(--pad-deep); color: var(--paper); }
+  ::selection { background: var(--pine); color: #fff; }
 
   a { color: inherit; text-decoration: none; }
   .u { border-bottom: 1px solid var(--rule-strong); transition: border-color .2s, color .2s; }
@@ -49,7 +58,7 @@
 
   h1, h2, h3 {
     font-family: "Fraunces", "Times New Roman", serif;
-    font-weight: 380;
+    font-weight: 500;
     line-height: 1.08;
     letter-spacing: -0.02em;
     margin: 0;
@@ -58,7 +67,7 @@
   }
   h1 { font-size: clamp(2.7rem, 6.5vw, 4.6rem); }
   h2 { font-size: clamp(1.5rem, 2.6vw, 2rem); }
-  h3 { font-size: 1.18rem; font-weight: 450; line-height: 1.3; }
+  h3 { font-size: 1.18rem; font-weight: 600; line-height: 1.3; }
   p { margin: 0 0 1.05rem; color: var(--ink-soft); font-size: 1.03rem; }
 
   .wrap { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
@@ -67,25 +76,29 @@
   .eyebrow {
     display: flex; align-items: center; gap: 1rem;
     font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase;
-    font-weight: 600; color: var(--pad-deep);
+    font-weight: 600; color: var(--pine);
     margin-bottom: 1rem;
   }
-  .eyebrow::after { content: ""; height: 1px; background: var(--rule-strong); flex: 1; max-width: 90px; }
+  .eyebrow::before { content: ""; width: 24px; height: 2px; background: var(--sun); border-radius: 2px; flex: 0 0 auto; }
+  .eyebrow::after { content: ""; height: 1px; background: var(--line); flex: 1; max-width: 90px; }
 
   /* ---------- NAV ---------- */
   nav.top {
     position: sticky; top: 0; z-index: 40;
-    background: rgba(245,242,232,0.92);
-    backdrop-filter: blur(9px);
-    -webkit-backdrop-filter: blur(9px);
+    background: rgba(251,250,247,0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--rule);
   }
   nav.top .inner {
     max-width: 1080px; margin: 0 auto;
-    display: flex; align-items: baseline; justify-content: space-between;
+    display: flex; align-items: center; justify-content: space-between;
     padding: 0.95rem 1.5rem;
   }
-  .wordmark { font-family: "Fraunces", serif; font-size: 1.02rem; font-weight: 450; letter-spacing: -0.01em; }
+  .wordmark { display: flex; align-items: center; gap: 0.75rem; font-family: "Fraunces", serif; font-size: 1.02rem; font-weight: 600; letter-spacing: -0.01em; }
+  .wordmark .peak { width: 38px; height: 38px; background: var(--pine); border-radius: 50%; display: grid; place-items: center; flex: 0 0 auto; }
+  .wordmark .peak svg { width: 22px; height: 22px; display: block; }
+  .wordmark .peak path { stroke: #fff; stroke-width: 2.2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
   .wordmark small {
     display: block; font-family: "Inter", sans-serif;
     font-size: 0.58rem; letter-spacing: 0.26em; text-transform: uppercase;
@@ -172,8 +185,10 @@
   /* specimen card */
   .specimen {
     position: sticky; top: 5.2rem;
-    border: 1px solid var(--rule-strong);
-    background: var(--paper-pad);
+    border: 1px solid var(--line);
+    background: var(--surface);
+    border-radius: 14px;
+    box-shadow: 0 1px 3px rgba(34,38,31,0.06);
     padding: 1.6rem 1.5rem 1.4rem;
   }
   .specimen .spec-head {
@@ -285,9 +300,10 @@
   /* rental aside */
   .paddle-aside {
     margin-top: 3rem;
-    background: var(--paper-pad);
-    border: 1px solid var(--rule-strong);
-    border-left: 3px solid var(--gold);
+    background: var(--sage);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--sun);
+    border-radius: 0 12px 12px 0;
     padding: 1.6rem 1.8rem;
   }
   .paddle-aside .ph {
@@ -358,7 +374,10 @@
 <!-- ===================== NAV ===================== -->
 <nav class="top">
   <div class="inner">
-    <a class="wordmark" href="https://seatoskytrails.com/">Sea to Sky Trails<small>Field notes from the corridor</small></a>
+    <a class="wordmark" href="https://seatoskytrails.com/">
+      <span class="peak"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18 L9 8 L12 12 L16 5 L21 18"/></svg></span>
+      <span>Sea to Sky Trails<small>Field notes from the corridor</small></span>
+    </a>
     <div class="links">
       <a href="#notebook">The Notebook</a>
       <a href="#marks">Field Marks</a>
@@ -535,8 +554,8 @@
 <section class="photo-feature" style="padding:2.75rem 0 0;">
   <div class="wrap">
     <figure style="margin:0;">
-      <div role="img" aria-label="A wide gravel trail through tall mossy second-growth forest in Alice Lake Provincial Park, the kind of walking that leads to Edith Lake on the Four Lakes Trail" style="background:url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Alice_Lake_Provincial_Park_Trail.jpg/1280px-Alice_Lake_Provincial_Park_Trail.jpg') center/cover no-repeat; aspect-ratio:16/9; border-radius:6px; border:1px solid var(--rule);"></div>
-      <figcaption style="font-family:'Fraunces',serif; font-style:italic; font-size:0.85rem; color:var(--ink-mute, #7a7268); margin-top:0.6rem;">The forest of Alice Lake Provincial Park &mdash; the walk in, not the pond itself. Photo &mdash; Keely Hill (CC BY-SA 4.0), via Wikimedia Commons.</figcaption>
+      <div role="img" aria-label="A wide gravel trail through tall mossy second-growth forest in Alice Lake Provincial Park, the kind of walking that leads to Edith Lake on the Four Lakes Trail" style="background:url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Alice_Lake_Provincial_Park_Trail.jpg/1280px-Alice_Lake_Provincial_Park_Trail.jpg') center/cover no-repeat; aspect-ratio:16/9; border-radius:12px; border:1px solid var(--line);"></div>
+      <figcaption style="font-family:'Fraunces',serif; font-style:italic; font-size:0.85rem; color:var(--mute); margin-top:0.6rem;">The forest of Alice Lake Provincial Park &mdash; the walk in, not the pond itself. Photo &mdash; Keely Hill (CC BY-SA 4.0), via Wikimedia Commons.</figcaption>
     </figure>
   </div>
 </section>

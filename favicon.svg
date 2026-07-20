@@ -1,17 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <!-- Edith Lake mark: lily pad with notch + dragonfly -->
-  <rect width="64" height="64" rx="12" fill="#f5f2e8"/>
-  <g stroke="#33472a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+  <rect width="64" height="64" rx="12" fill="#fbfaf7"/>
+  <g stroke="#3d5a3f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none">
     <ellipse cx="32" cy="44" rx="22" ry="10"/>
     <path d="M32 44 L50 37 M32 44 L52 43"/>
     <path d="M32 44 l-15 -4 M32 44 l-16 4 M32 44 l-5 8" opacity="0.5" stroke-width="1.6"/>
   </g>
   <g transform="translate(32,18)">
-    <g fill="none" stroke="#b98a24" stroke-width="1.8" stroke-linecap="round">
+    <g fill="none" stroke="#c98f2d" stroke-width="1.8" stroke-linecap="round">
       <ellipse cx="-9" cy="-2" rx="8.5" ry="3" transform="rotate(-20 -9 -2)"/>
       <ellipse cx="9" cy="-2" rx="8.5" ry="3" transform="rotate(20 9 -2)"/>
     </g>
-    <path d="M0 -2 C 1.5 3 1.5 10 0 17 C -1.5 10 -1.5 3 0 -2 Z" fill="#b98a24"/>
+    <path d="M0 -2 C 1.5 3 1.5 10 0 17 C -1.5 10 -1.5 3 0 -2 Z" fill="#c98f2d"/>
     <circle cx="0" cy="-4.5" r="2.4" fill="#8a651a"/>
   </g>
 </svg>
