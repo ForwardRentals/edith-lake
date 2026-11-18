@@ -1,17 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- Edith Lake mark: lily pad with notch + dragonfly -->
-  <rect width="64" height="64" rx="12" fill="#fbfaf7"/>
-  <g stroke="#3d5a3f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <ellipse cx="32" cy="44" rx="22" ry="10"/>
-    <path d="M32 44 L50 37 M32 44 L52 43"/>
-    <path d="M32 44 l-15 -4 M32 44 l-16 4 M32 44 l-5 8" opacity="0.5" stroke-width="1.6"/>
-  </g>
-  <g transform="translate(32,18)">
-    <g fill="none" stroke="#c98f2d" stroke-width="1.8" stroke-linecap="round">
-      <ellipse cx="-9" cy="-2" rx="8.5" ry="3" transform="rotate(-20 -9 -2)"/>
-      <ellipse cx="9" cy="-2" rx="8.5" ry="3" transform="rotate(20 9 -2)"/>
-    </g>
-    <path d="M0 -2 C 1.5 3 1.5 10 0 17 C -1.5 10 -1.5 3 0 -2 Z" fill="#c98f2d"/>
-    <circle cx="0" cy="-4.5" r="2.4" fill="#8a651a"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" >
+<defs><clipPath id="c"><rect width="64" height="64" rx="15"/></clipPath></defs>
+<g clip-path="url(#c)">
+<rect width="64" height="64" fill="#0d1f1c"/>
+<circle cx="45" cy="19" r="6.5" fill="#ee7a35"/>
+<path d="M-4 48 L14 27 L24 37 L35 22 L68 56 L68 70 L-4 70Z" fill="#1d5a49"/>
+<path d="M9 50 L28 14 L47 50 Z" fill="#f6f4ee"/>
+<path d="M28 14 L34 25.5 L30.5 23.5 L28 28 L25.5 23.5 L22 25.5Z" fill="#cfe3e0"/>
+<path d="M27 48.5 L38 43 L20 37.5 L35 32 L22 26.5 L31 22 L28 17.5" fill="none" stroke="#ee7a35" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3.2 3.4"/>
+<path d="M-2 48.5 q6.5 -4.5 13 0 t13 0 t13 0 t13 0 t13 0 t13 0 V70 H-2Z" fill="#7cc4d4"/>
+<path d="M-2 55 q6.5 -4 13 0 t13 0 t13 0 t13 0 t13 0 t13 0" fill="none" stroke="#0d1f1c" stroke-opacity=".28" stroke-width="2"/>
+</g></svg>
