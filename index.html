@@ -13,358 +13,7 @@
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://seatoskytrails.com/img/trails/edith-lake.jpg">
 <meta name="twitter:image" content="https://seatoskytrails.com/img/trails/edith-lake.jpg">
-<style>
-  :root {
-    --bg: #fbfaf7;             /* Sea to Sky Trails brand */
-    --surface: #ffffff;
-    --sage: #eef1ea;
-    --line: #e3e1d8;
-    --ink: #22261f;
-    --ink-soft: #4c5245;
-    --mute: #8b9083;
-    --pine: #3d5a3f;
-    --pine-deep: #2c4230;
-    --sun: #c98f2d;
-    /* legacy aliases */
-    --paper: var(--bg);
-    --paper-dim: var(--sage);
-    --paper-pad: var(--sage);
-    --ink-mute: var(--mute);
-    --rule: var(--line);
-    --rule-strong: var(--line);
-    --pad: var(--pine);
-    --pad-deep: var(--pine);
-    --gold: var(--sun);
-    --pond: var(--ink-soft);
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  html, body {
-    margin: 0; padding: 0;
-    background: var(--paper); color: var(--ink);
-    font-family: "Inter", system-ui, -apple-system, sans-serif;
-    font-size: 17px; line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-  }
-  ::selection { background: var(--pine); color: #fff; }
 
-  a { color: inherit; text-decoration: none; }
-  .u { border-bottom: 1px solid var(--rule-strong); transition: border-color .2s, color .2s; }
-  .u:hover { border-bottom-color: var(--pad-deep); color: var(--pad-deep); }
-
-  h1, h2, h3 {
-    font-family: "Newsreader", "Times New Roman", serif;
-    font-weight: 500;
-    line-height: 1.08;
-    letter-spacing: -0.02em;
-    margin: 0;
-    font-variation-settings: "opsz" 144, "SOFT" 30;
-    color: var(--ink);
-  }
-  h1 { font-size: clamp(2.7rem, 6.5vw, 4.6rem); }
-  h2 { font-size: clamp(1.5rem, 2.6vw, 2rem); }
-  h3 { font-size: 1.18rem; font-weight: 600; line-height: 1.3; }
-  p { margin: 0 0 1.05rem; color: var(--ink-soft); font-size: 1.03rem; }
-
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
-  .narrow { max-width: 700px; margin: 0 auto; padding: 0 1.5rem; }
-
-  .eyebrow {
-    display: flex; align-items: center; gap: 1rem;
-    font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase;
-    font-weight: 600; color: var(--pine);
-    margin-bottom: 1rem;
-  }
-  .eyebrow::before { content: ""; width: 24px; height: 2px; background: var(--sun); border-radius: 2px; flex: 0 0 auto; }
-  .eyebrow::after { content: ""; height: 1px; background: var(--line); flex: 1; max-width: 90px; }
-
-  /* ---------- NAV ---------- */
-  nav.top {
-    position: sticky; top: 0; z-index: 40;
-    background: rgba(251,250,247,0.9);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--rule);
-  }
-  nav.top .inner {
-    max-width: 1080px; margin: 0 auto;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0.95rem 1.5rem;
-  }
-  .wordmark { display: flex; align-items: center; gap: 0.75rem; font-family: "Newsreader", serif; font-size: 1.02rem; font-weight: 600; letter-spacing: -0.01em; }
-  .wordmark .peak { width: 38px; height: 38px; background: var(--pine); border-radius: 50%; display: grid; place-items: center; flex: 0 0 auto; }
-  .wordmark .peak svg { width: 22px; height: 22px; display: block; }
-  .wordmark .peak path { stroke: #fff; stroke-width: 2.2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
-  .wordmark small {
-    display: block; font-family: "Inter", sans-serif;
-    font-size: 0.58rem; letter-spacing: 0.26em; text-transform: uppercase;
-    font-weight: 600; color: var(--ink-mute); margin-top: 0.1rem;
-  }
-  nav.top .links { display: flex; gap: 1.4rem; }
-  nav.top .links a {
-    font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
-    font-weight: 500; color: var(--ink-soft);
-  }
-  nav.top .links a:hover { color: var(--pad-deep); }
-  @media (max-width: 720px) { nav.top .links { display: none; } }
-
-  /* ---------- HERO ---------- */
-  header.hero { border-bottom: 1px solid var(--rule); background: var(--paper-dim); }
-  .hero-svg { display: block; width: 100%; height: auto; }
-
-  /* ---------- TITLE ---------- */
-  .titleblock { padding: 3.5rem 0 0; }
-  .vol-line {
-    font-size: 0.7rem; letter-spacing: 0.26em; text-transform: uppercase;
-    font-weight: 600; color: var(--gold);
-    margin-bottom: 1.1rem;
-  }
-  .vol-line a { color: var(--ink-mute); }
-  .vol-line a:hover { color: var(--pad-deep); }
-  .deck {
-    font-family: "Newsreader", serif; font-style: italic; font-weight: 340;
-    font-size: clamp(1.2rem, 2.4vw, 1.5rem); line-height: 1.45;
-    color: var(--ink-soft); max-width: 42ch;
-    margin: 1.4rem 0 0;
-    font-variation-settings: "opsz" 60, "SOFT" 30;
-  }
-
-  /* coordinate ribbon — vertical ledger style */
-  .ribbon {
-    margin: 2.75rem 0 0;
-    border-top: 1px solid var(--rule-strong);
-    border-bottom: 1px solid var(--rule-strong);
-    display: grid;
-    grid-template-columns: repeat(5, auto);
-    justify-content: space-between;
-    gap: 0.5rem 2rem;
-    padding: 1rem 0;
-  }
-  @media (max-width: 780px) { .ribbon { grid-template-columns: repeat(2, auto); row-gap: 1.1rem; } }
-  .ribbon .cell .k {
-    font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase;
-    font-weight: 600; color: var(--ink-mute); display: block;
-  }
-  .ribbon .cell .v {
-    font-family: "Newsreader", serif; font-size: 1.06rem; font-weight: 420;
-    color: var(--ink); letter-spacing: -0.01em;
-  }
-
-  /* ---------- NOTEBOOK (essay + specimen card) ---------- */
-  section.notebook { padding: 5.5rem 0 6rem; }
-  .notebook-grid {
-    display: grid; grid-template-columns: 1fr 300px; gap: 4.5rem;
-    align-items: start;
-  }
-  @media (max-width: 880px) { .notebook-grid { grid-template-columns: 1fr; gap: 3rem; } }
-  .essay p { font-size: 1.06rem; line-height: 1.78; }
-  .essay .lead {
-    font-family: "Newsreader", serif; font-weight: 360;
-    font-size: 1.35rem; line-height: 1.52; color: var(--ink);
-    letter-spacing: -0.005em; margin-bottom: 1.5rem;
-  }
-  .essay .opener::first-letter {
-    font-family: "Newsreader", serif;
-    font-weight: 400;
-    font-size: 3.9rem; line-height: 0.82;
-    float: left; padding: 0.35rem 0.6rem 0 0;
-    color: var(--pad-deep);
-    font-variation-settings: "opsz" 144, "SOFT" 30;
-  }
-  .marginalia {
-    font-family: "Newsreader", serif; font-style: italic; font-weight: 340;
-    font-size: 0.95rem; color: var(--pond);
-    border-left: 2px solid var(--gold);
-    padding-left: 1rem; margin: 1.6rem 0;
-  }
-
-  /* specimen card */
-  .specimen {
-    position: sticky; top: 5.2rem;
-    border: 1px solid var(--line);
-    background: var(--surface);
-    border-radius: 14px;
-    box-shadow: 0 1px 3px rgba(34,38,31,0.06);
-    padding: 1.6rem 1.5rem 1.4rem;
-  }
-  .specimen .spec-head {
-    font-size: 0.64rem; letter-spacing: 0.24em; text-transform: uppercase;
-    font-weight: 600; color: var(--pad-deep);
-    padding-bottom: 0.9rem; margin-bottom: 0.2rem;
-    border-bottom: 1px solid var(--rule-strong);
-  }
-  .specimen dl { margin: 0; }
-  .specimen .pair {
-    display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
-    padding: 0.72rem 0; border-bottom: 1px dotted var(--rule-strong);
-  }
-  .specimen .pair:last-child { border-bottom: none; }
-  .specimen dt { font-size: 0.78rem; font-weight: 500; color: var(--ink-mute); letter-spacing: 0.04em; }
-  .specimen dd { margin: 0; font-family: "Newsreader", serif; font-size: 0.98rem; font-weight: 420; text-align: right; color: var(--ink); }
-  .specimen .footnote { margin: 1rem 0 0; font-size: 0.78rem; line-height: 1.55; color: var(--ink-mute); }
-
-  /* ---------- PULL QUOTE ---------- */
-  .pull {
-    border-top: 1px solid var(--rule-strong);
-    border-bottom: 1px solid var(--rule-strong);
-    padding: 3.2rem 0;
-    text-align: center;
-  }
-  .pull blockquote {
-    margin: 0 auto; max-width: 34ch;
-    font-family: "Newsreader", serif; font-style: italic; font-weight: 340;
-    font-size: clamp(1.5rem, 3.2vw, 2.15rem); line-height: 1.35;
-    letter-spacing: -0.015em; color: var(--ink);
-    font-variation-settings: "opsz" 144, "SOFT" 30;
-  }
-  .pull .attr { margin-top: 1.1rem; font-size: 0.68rem; letter-spacing: 0.24em; text-transform: uppercase; font-weight: 600; color: var(--gold); }
-
-  /* ---------- FIELD MARKS ---------- */
-  section.marks { padding: 5.5rem 0; }
-  .marks-intro { max-width: 56ch; margin-bottom: 3rem; }
-  .marks-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--rule-strong); }
-  @media (max-width: 760px) { .marks-list { grid-template-columns: 1fr; } }
-  .mark-entry {
-    display: grid; grid-template-columns: 88px 1fr; gap: 1.4rem;
-    padding: 2rem 2rem 2rem 0;
-    border-bottom: 1px solid var(--rule);
-  }
-  .marks-list .mark-entry:nth-child(odd) { border-right: 1px solid var(--rule); padding-right: 2.5rem; }
-  @media (max-width: 760px) {
-    .marks-list .mark-entry:nth-child(odd) { border-right: none; padding-right: 0; }
-    .mark-entry { padding-right: 0; }
-  }
-  .mark-entry .plate { color: var(--pad-deep); }
-  .mark-entry .plate svg { width: 88px; height: 88px; display: block; }
-  .mark-entry .plate .plate-n {
-    display: block; margin-top: 0.4rem; text-align: center;
-    font-family: "Newsreader", serif; font-style: italic; font-size: 0.78rem; color: var(--ink-mute);
-  }
-  .mark-entry h3 { margin-bottom: 0.35rem; }
-  .mark-entry p { font-size: 0.94rem; line-height: 1.62; margin: 0; }
-  .sketchline { stroke: currentColor; fill: none; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
-  .sketchline.faint { opacity: 0.45; stroke-width: 1.1; }
-  .sketchgold { stroke: var(--gold); fill: none; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
-
-  /* ---------- FOUR LAKES LEDGER ---------- */
-  section.ledger { padding: 5.5rem 0; background: var(--paper-dim); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
-  .ledger-row {
-    display: grid; grid-template-columns: 3.2rem 1fr 2fr auto; gap: 1.5rem;
-    align-items: baseline;
-    padding: 1.5rem 0;
-    border-bottom: 1px solid var(--rule-strong);
-  }
-  .ledger-row:last-of-type { border-bottom: none; }
-  @media (max-width: 720px) {
-    .ledger-row { grid-template-columns: 2.4rem 1fr; gap: 0.4rem 1rem; }
-    .ledger-row .desc { grid-column: 2; }
-    .ledger-row .go { grid-column: 2; }
-  }
-  .ledger-row .n {
-    font-family: "Newsreader", serif; font-style: italic; font-weight: 340;
-    font-size: 1.6rem; color: var(--gold); line-height: 1;
-  }
-  .ledger-row .name { font-family: "Newsreader", serif; font-size: 1.35rem; font-weight: 420; letter-spacing: -0.015em; }
-  .ledger-row .name .tag {
-    display: inline-block; margin-left: 0.6rem; vertical-align: middle;
-    font-family: "Inter", sans-serif; font-size: 0.58rem; letter-spacing: 0.2em;
-    text-transform: uppercase; font-weight: 600; color: var(--paper);
-    background: var(--pad-deep); padding: 0.22rem 0.55rem; border-radius: 999px;
-  }
-  .ledger-row .desc { font-size: 0.95rem; color: var(--ink-soft); line-height: 1.6; }
-  .ledger-row .go a {
-    font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600;
-    color: var(--pad-deep); border-bottom: 1px solid var(--rule-strong);
-  }
-  .ledger-row .go a:hover { border-bottom-color: var(--pad-deep); }
-
-  /* ---------- SEASONS ---------- */
-  section.seasons { padding: 5.5rem 0; }
-  .season-table { border-top: 1px solid var(--rule-strong); margin-top: 2.5rem; }
-  .season-row {
-    display: grid; grid-template-columns: 150px 1fr; gap: 2rem;
-    padding: 1.4rem 0; border-bottom: 1px solid var(--rule);
-    align-items: baseline;
-  }
-  @media (max-width: 620px) { .season-row { grid-template-columns: 1fr; gap: 0.3rem; } }
-  .season-row .s {
-    font-family: "Newsreader", serif; font-style: italic; font-weight: 360;
-    font-size: 1.15rem; color: var(--pad-deep);
-  }
-  .season-row .d { font-size: 0.98rem; color: var(--ink-soft); line-height: 1.65; }
-
-  /* rental aside */
-  .paddle-aside {
-    margin-top: 3rem;
-    background: var(--sage);
-    border: 1px solid var(--line);
-    border-left: 3px solid var(--sun);
-    border-radius: 0 12px 12px 0;
-    padding: 1.6rem 1.8rem;
-  }
-  .paddle-aside .ph {
-    font-size: 0.64rem; letter-spacing: 0.24em; text-transform: uppercase;
-    font-weight: 600; color: var(--gold); margin-bottom: 0.6rem;
-  }
-  .paddle-aside p { font-size: 0.97rem; margin: 0; line-height: 1.68; }
-
-  /* ---------- HONEST ---------- */
-  section.honest { padding: 5.5rem 0; border-top: 1px solid var(--rule); }
-  section.honest em { color: var(--ink); }
-
-  /* ---------- FAQ ---------- */
-  section.faq { padding: 5.5rem 0 6rem; border-top: 1px solid var(--rule); background: var(--paper-dim); }
-  .faq-list { margin-top: 2.25rem; border-top: 1px solid var(--rule-strong); }
-  details.q { border-bottom: 1px solid var(--rule-strong); }
-  details.q > summary {
-    list-style: none; cursor: pointer; outline: none;
-    display: flex; align-items: baseline; gap: 1.1rem;
-    padding: 1.35rem 0;
-    font-family: "Newsreader", serif; font-weight: 420;
-    font-size: 1.16rem; line-height: 1.35; letter-spacing: -0.01em;
-  }
-  details.q > summary::-webkit-details-marker { display: none; }
-  details.q > summary:hover { color: var(--pad-deep); }
-  details.q .fig {
-    font-family: "Newsreader", serif; font-style: italic; font-weight: 340;
-    color: var(--gold); font-size: 0.92rem; flex: 0 0 1.6rem;
-  }
-  details.q .tip {
-    margin-left: auto; font-family: "Inter", sans-serif; font-weight: 300;
-    font-size: 1.35rem; color: var(--ink-mute); transition: transform .2s; line-height: 1;
-  }
-  details.q[open] > summary .tip { transform: rotate(45deg); }
-  details.q .ans { padding: 0 0 1.6rem 2.7rem; }
-  @media (max-width: 640px) { details.q .ans { padding-left: 0; } }
-  details.q .ans p { font-size: 0.99rem; margin-bottom: 0.85rem; }
-  details.q .ans p:last-child { margin-bottom: 0; }
-
-  /* ---------- FOOTER ---------- */
-  footer.colophon { border-top: 1px solid var(--rule-strong); padding: 3.5rem 0 2.5rem; }
-  .foot-cols { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 2.5rem; margin-bottom: 2.5rem; }
-  @media (max-width: 720px) { .foot-cols { grid-template-columns: 1fr; gap: 2rem; } }
-  .foot-cols h4 {
-    font-family: "Inter", sans-serif; font-size: 0.64rem; letter-spacing: 0.24em;
-    text-transform: uppercase; font-weight: 600; color: var(--ink-mute);
-    margin: 0 0 0.85rem;
-  }
-  .foot-cols p { font-size: 0.88rem; margin: 0; line-height: 1.65; }
-  .foot-cols ul { list-style: none; margin: 0; padding: 0; }
-  .foot-cols li { margin-bottom: 0.45rem; font-size: 0.9rem; }
-  .foot-cols li a { color: var(--ink-soft); border-bottom: 1px solid transparent; }
-  .foot-cols li a:hover { color: var(--pad-deep); border-bottom-color: var(--rule-strong); }
-  .territory {
-    font-family: "Newsreader", serif; font-style: italic; font-weight: 340;
-    font-size: 0.95rem; color: var(--ink-soft);
-    border-top: 1px solid var(--rule); padding-top: 1.5rem; margin-bottom: 1.25rem;
-  }
-  .colo-line {
-    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;
-    font-size: 0.74rem; color: var(--ink-mute);
-  }
-  .colo-line em { font-family: "Newsreader", serif; }
-</style>
 <meta property="og:site_name" content="Sea to Sky Trails">
 <meta property="og:locale" content="en_CA">
 <meta name="twitter:card" content="summary_large_image">
@@ -425,556 +74,214 @@ a.sts-trailmark .peak{display:none!important}
 /* 70s layer for older guides */
 :root{--bg:#f8efd9;--paper:#f8efd9;--paper-2:#f8efd9;--paper-warm:#f3e6c6;--paper-deep:#f1e2bf;--paper-dim:#f1e2bf;--paper-sink:#f1e2bf;--paper-cool:#f3e6c6;--paper-cold:#f3e6c6;--paper-card:#fffaf0;--paper-raise:#fffaf0;--surface:#fffaf0;--sage:#f1e2bf;--line:#e3d3ac;--rule:#e3d3ac;--rule-strong:#d8c48f;--ink:#2a1a10;--ink-soft:#4b3a2c;--mute:#7d6a45;--ink-mute:#7d6a45;--pine:#187a78;--pine-deep:#0f5453;--moss:#8c9a2e;--moss-deep:#5f6a1c;--forest:#187a78;--fir:#187a78;--granite:#187a78;--sun:#e0571e;--gold:#e9a21c;--amber:#e9a21c;--alpenglow:#e0571e;--rust:#b83a1c;--ice:#187a78;--ice-deep:#0f5453;--glacier:#187a78;--glacier-deep:#0f5453;--lake:#187a78;--river:#187a78;--teal:#187a78}
 h1,h2{font-family:"Caprasimo","Archivo",Georgia,serif!important;font-weight:400!important;letter-spacing:-.005em!important;font-variation-settings:normal!important}
-h1 em,h2 em,h3 em{font-family:"Caprasimo",Georgia,serif!important;font-style:normal!important;color:#d6368f!important}
-.sts-bar::after{content:"";display:block;height:8px;background:linear-gradient(180deg,#e9a21c 0 20%,#e0571e 20% 40%,#ff5fa2 40% 60%,#c42a8a 60% 80%,#5b2a86 80%)}
+h1 em,h2 em,h3 em{font-family:"Caprasimo",Georgia,serif!important;font-style:normal!important;color:#e0571e!important}
+.sts-bar::after{content:"";display:block;height:8px;background:linear-gradient(180deg,#e9a21c 0 25%,#e0571e 25% 50%,#b83a1c 50% 75%,#4b2b18 75%)}
 .sts-bar{background:#2a1a10}.sts-bar .all{background:#e0571e;color:#fff}
-.sts-net{background:#3a1633}.sts-net .ey,.sts-net .c small{color:#e9a21c}.sts-net .c{background:#26102a}
+.sts-net{background:#4b2b18}.sts-net .ey,.sts-net .c small{color:#e9a21c}.sts-net .c{background:#2a1a10}
 .sts-net .more a.p{background:#e0571e;border-color:#e0571e;color:#fff}
-.sts-trailname small{color:#d6368f}
+.sts-trailname small{color:#e0571e}
 
 .sts-bar .in{padding:.85rem 1.5rem}
 .sts-logo svg{width:68px;height:68px}
-.sts-logo .w small{font:800 .78rem "Inter",sans-serif;letter-spacing:.36em;color:#ff5fa2}
+.sts-logo .w small{font:800 .78rem "Inter",sans-serif;letter-spacing:.36em;color:#e9a21c}
 .sts-logo .w b{font:400 2.5rem/1 "Caprasimo",Georgia,serif!important;letter-spacing:0!important;text-transform:none!important;margin-top:.3rem;font-variation-settings:normal!important}
-.sts-bar{background:#26102a}
-.sts-bar .all{background:#ff5fa2;color:#2a0a1c}
+.sts-bar{background:#2a1a10}
+.sts-bar .all{background:#e9a21c;color:#2a0a1c}
 @media(max-width:700px){.sts-logo svg{width:48px;height:48px}.sts-logo .w b{font-size:1.7rem}.sts-logo .w small{font-size:.62rem}}
 </style>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long is the Four Lakes Trail?", "acceptedAnswer": {"@type": "Answer", "text": "BC Parks does not give a distance. Local guides put the loop at about 6 km."}}, {"@type": "Question", "name": "Can I bike the trail?", "acceptedAnswer": {"@type": "Answer", "text": "Cycling is closed on the Edith Lake to South Beach section, and the rest of the Four Lakes Trail is closed to cycling May 1 to September 15."}}, {"@type": "Question", "name": "Can I bring my dog?", "acceptedAnswer": {"@type": "Answer", "text": "On a leash, but not on the Alice Lake Trail, beaches, playground or picnic areas."}}]}</script>
+<style id="sts-guide">
+:root{--wide:1360px}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:#f6f4ee;color:#0d1f1c;font-family:"Inter",system-ui,sans-serif;font-size:17px;line-height:1.6;margin:0;-webkit-font-smoothing:antialiased}
+.g3 *{box-sizing:border-box}
+.g3 img{max-width:100%;display:block}
+.g3 .main3 a,.g3 .subnav a:not(.cta),.g3 .crumb a{color:inherit}
+.g3 .main3 p{margin:0 0 1rem;color:#33453f;font-size:1.02rem}
+.g3 .wide{max-width:var(--wide);margin:0 auto;padding:0 2rem}
+.ic{width:1.35em;height:1.35em;flex:none}
+/* hero */
+.hero3{position:relative;min-height:min(72vh,720px);display:flex;align-items:flex-end;color:#fff;background:#0d1f1c center/cover no-repeat}
+.hero3::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,31,28,.5) 0%,rgba(13,31,28,.18) 38%,rgba(13,31,28,.9) 100%)}
+.hero3 .wide{position:relative;width:100%;padding-top:7rem;padding-bottom:5.5rem}
+.crumb{font-size:.82rem;color:#d3e4df;margin-bottom:1.2rem}
+.crumb a{text-decoration:none;color:#d3e4df}.crumb a:hover{color:#fff}
+.hero3 .tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.1rem}
+.pill{font:700 .72rem "Inter",sans-serif;letter-spacing:.14em;text-transform:uppercase;border-radius:999px;padding:.4rem .85rem;background:rgba(255,255,255,.16);backdrop-filter:blur(6px);color:#fff;border:1px solid rgba(255,255,255,.25)}
+.pill.d{background:#ee7a35;color:#1b0d05;border-color:#ee7a35}
+.hero3 h1{font-size:clamp(3rem,8vw,7rem);line-height:.95;color:#fff;margin:0;max-width:14ch}
+.hero3 .sub{font-size:clamp(1.1rem,1.8vw,1.45rem);color:#e6f0ec;max-width:46ch;margin:1.2rem 0 0}
+.hero3 .credit{position:absolute;right:2rem;bottom:1rem;font-size:.7rem;color:#d3e4df;opacity:.85;z-index:2}
+/* facts */
+.facts3{margin-top:-3.2rem;position:relative;z-index:5}
+.facts3 .row{display:grid;grid-template-columns:repeat(6,1fr);background:#fff;border-radius:18px;box-shadow:0 20px 50px -24px rgba(13,31,28,.5);overflow:hidden}
+.fact{padding:1.4rem 1.5rem;border-right:1px solid #e5e1d4;display:flex;flex-direction:column;gap:.15rem}
+.fact:last-child{border:0}
+.fact .k{display:flex;align-items:center;gap:.5rem;font:700 .68rem "Inter",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#5b6b65}
+.fact .k .ic{color:#1f7f93}
+.fact b{font:800 1.9rem/1.1 "Archivo",sans-serif;letter-spacing:-.02em;font-variation-settings:"wdth" 96;margin-top:.3rem}
+.fact small{color:#5b6b65;font-size:.85rem}
+.fact.hard b{color:#c4531e}
+@media(max-width:1100px){.facts3 .row{grid-template-columns:repeat(3,1fr)}.fact{border-bottom:1px solid #e5e1d4}}
+@media(max-width:600px){.facts3 .row{grid-template-columns:repeat(2,1fr)}}
+/* subnav */
+.subnav{position:sticky;top:0;z-index:70;background:rgba(246,244,238,.94);backdrop-filter:blur(10px);border-bottom:1px solid #dcd8ca;margin-top:2rem}
+.subnav .in{max-width:var(--wide);margin:0 auto;padding:0 2rem;display:flex;gap:.4rem;overflow-x:auto;align-items:center}
+.subnav a{white-space:nowrap;text-decoration:none;font:700 .82rem "Inter",sans-serif;padding:1rem .9rem;color:#33453f;border-bottom:3px solid transparent}
+.subnav a:hover{color:#0d1f1c;border-color:#ee7a35}
+.subnav .cta{margin-left:auto;background:#ee7a35;color:#1b0d05!important;border-radius:999px;padding:.55rem 1.1rem;border:0;margin-top:.1rem}
+/* layout */
+.main3{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:4rem;padding:3rem 0 4rem;align-items:start}
+@media(max-width:1100px){.main3{grid-template-columns:1fr;gap:2rem}}
+.side{position:sticky;top:90px}
+@media(max-width:1100px){.side{position:static}}
+.sec{padding:2.6rem 0;border-bottom:1px solid #dcd8ca}
+.sec:first-child{padding-top:0}
+.sec:last-child{border:0}
+.sec h2{font-size:clamp(1.8rem,3vw,2.5rem);margin:0 0 1.2rem}
+.lead3{font-size:1.25rem!important;color:#0d1f1c!important;max-width:60ch;line-height:1.55}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.2rem 0 0}
+.chip3{display:inline-flex;align-items:center;gap:.45rem;background:#fff;border:1px solid #dcd8ca;border-radius:999px;padding:.45rem .95rem;font:600 .86rem "Inter",sans-serif}
+.chip3 .ic{color:#ee7a35;width:1.1em;height:1.1em}
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.cards3.two{grid-template-columns:repeat(2,1fr)}
+@media(max-width:900px){.cards3,.cards3.two{grid-template-columns:1fr}}
+.c3{background:#fff;border-radius:14px;padding:1.3rem 1.4rem;box-shadow:0 1px 0 rgba(13,31,28,.05)}
+.c3 .ic{color:#1f7f93;width:1.7em;height:1.7em;margin-bottom:.6rem}
+.c3 h3{font-size:1.1rem;margin:0 0 .35rem}
+.c3 p{font-size:.95rem;margin:0}
+.c3.warn .ic{color:#c4531e}
+.photo{margin:1.6rem 0 0}
+.photo img{border-radius:14px;width:100%}
+.photo figcaption{font-size:.78rem;color:#5b6b65;margin-top:.5rem}
+/* steps */
+.steps{list-style:none;margin:0;padding:0;position:relative}
+.steps::before{content:"";position:absolute;left:21px;top:10px;bottom:10px;width:3px;background:repeating-linear-gradient(#ee7a35 0 8px,transparent 8px 14px)}
+.step{position:relative;padding:0 0 1.6rem 4rem}
+.step .n{position:absolute;left:0;top:0;width:44px;height:44px;border-radius:50%;background:#0d1f1c;color:#fff;font:800 1.15rem "Archivo",sans-serif;display:grid;place-items:center;box-shadow:0 0 0 5px #f6f4ee}
+.step .box{background:#fff;border-radius:14px;padding:1.2rem 1.4rem}
+.step h3{font-size:1.3rem;margin:0 0 .6rem}
+.step .st{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.8rem}
+.step .st span{font:700 .78rem "Inter",sans-serif;background:#e8eee6;color:#143d2f;border-radius:999px;padding:.3rem .7rem}
+.step ul{margin:.2rem 0 0;padding-left:1.1rem;color:#33453f;font-size:.98rem}
+.step li{margin-bottom:.35rem}
+/* seasons */
+.months{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;margin:.6rem 0 .8rem}
+.mo{border-radius:8px;padding:.7rem 0;text-align:center;font:800 .78rem "Archivo",sans-serif;letter-spacing:.04em}
+.mo.wait{background:#e4e0d3;color:#6b766f}.mo.maybe{background:#f9dcb0;color:#7a4b00}.mo.go{background:#bfe5cb;color:#14532d}.mo.prime{background:#1f5a45;color:#fff}
+.legend{display:flex;gap:1.2rem;flex-wrap:wrap;font-size:.82rem;color:#5b6b65;margin-bottom:1rem}
+.legend i{display:inline-block;width:.8rem;height:.8rem;border-radius:3px;margin-right:.4rem;vertical-align:-1px}
+/* sidebar */
+.sidecard{background:#fff;border-radius:18px;box-shadow:0 18px 44px -26px rgba(13,31,28,.5);overflow:hidden}
+.sidecard h3{margin:0;padding:1.2rem 1.5rem;font-size:1.05rem;background:#0d1f1c;color:#fff;letter-spacing:-.01em}
+.sidecard dl{margin:0;padding:.4rem 1.5rem 1rem}
+.sidecard .r{display:flex;justify-content:space-between;gap:1rem;padding:.75rem 0;border-bottom:1px solid #eeebe0;font-size:.95rem}
+.sidecard .r:last-child{border:0}
+.sidecard dt{color:#5b6b65;display:flex;align-items:center;gap:.5rem}
+.sidecard dt .ic{color:#1f7f93;width:1.1em;height:1.1em}
+.sidecard dd{margin:0;font-weight:700;text-align:right}
+.sidecard .acts{padding:0 1.5rem 1.5rem;display:grid;gap:.6rem}
+.btn3{display:block;text-align:center;text-decoration:none;font:700 .95rem "Inter",sans-serif;border-radius:999px;padding:.9rem 1.2rem;background:#ee7a35;color:#1b0d05!important}
+.btn3:hover{background:#ff8d4a}
+.btn3.o{background:transparent;border:1.5px solid #0d1f1c;color:#0d1f1c!important}
+.btn3.o:hover{background:#0d1f1c;color:#fff!important}
+.boat{background:#12353d;color:#dfeae6;border-radius:18px;padding:1.8rem 2rem;display:grid;grid-template-columns:1.4fr 1fr;gap:2rem;align-items:center}
+.boat h2{color:#fff;margin:0 0 .6rem!important;font-size:1.8rem!important}
+.boat p{color:#c6d8d2}
+@media(max-width:800px){.boat{grid-template-columns:1fr}}
+.reality{background:#fff;border-left:5px solid #ee7a35;border-radius:12px;padding:1.2rem 1.5rem}
+.reality h3{margin:0 0 .4rem;font-size:1.1rem}
+.faq3{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;align-items:start}
+@media(max-width:900px){.faq3{grid-template-columns:1fr}}
+.faq3 details{background:#fff;border-radius:12px;padding:1rem 1.3rem}
+.faq3 summary{font:700 1rem "Inter",sans-serif;cursor:pointer}
+.faq3 details p{margin:.7rem 0 0;font-size:.96rem}
+/* ---- 70s layer (brand v2.1) ---- */
+:root{--cream:#f8efd9;--cream2:#f1e2bf;--mustard:#e9a21c;--burnt:#e0571e;--rust:#b83a1c;--pink:#ff5fa2;--fuchsia:#c42a8a;--violet:#5b2a86;--avocado:#8c9a2e;--teal7:#1e9a98;--plum:#6e2d5e;--choc:#4b2b18;--snow:#f8efd9;--stone:#f1e2bf;--line:#e3d3ac}
+body{background:var(--cream)}
+h1,h2{font-family:"Caprasimo","Archivo",Georgia,serif!important;font-weight:400!important;letter-spacing:-.01em!important;font-variation-settings:normal!important}
+h1 em,h2 em{font-family:"Caprasimo",serif!important;font-style:normal!important;color:var(--mustard)!important}
+.stripe{display:block;height:14px;background:linear-gradient(180deg,#e9a21c 0 25%,#e0571e 25% 50%,#b83a1c 50% 75%,#4b2b18 75%)}
+.sts-nav::after,.sts-bar::after{content:"";display:block;height:8px;background:linear-gradient(180deg,#e9a21c 0 25%,#e0571e 25% 50%,#b83a1c 50% 75%,#4b2b18 75%)}
+.eyebrow::before{height:4px;width:34px;background:linear-gradient(180deg,#e9a21c 0 25%,#e0571e 25% 50%,#b83a1c 50% 75%,#4b2b18 75%)!important;border-radius:0!important}
+.btn,.sts-links .btn,.btn3,.sts-bar .all,.subnav .cta{background:var(--burnt)!important;color:#fff!important}
+.btn:hover,.sts-links .btn:hover,.btn3:hover{background:var(--rust)!important}
+.btn3.o,.btn.ghost{background:transparent!important}
+.chip.on{background:var(--choc);border-color:var(--choc);color:#fff}
+.chip{background:#fffaf0;border-color:var(--line)}
+.card,.c3,.step .box,.fact,.facts3 .row,.sidecard,.reality,.faq3 details,.faq details,.chip3,.stats{background:#fffaf0}
+.card .tags span{background:var(--cream)}
+.diff.easy{background:#e3e8b4;color:#4a5410}.diff.mod,.diff.modeasy{background:#fbe0a0;color:#7a4b00}.diff.hard,.diff.modhard{background:#f8c3a3;color:#8a2c0a}.diff.serious{background:var(--plum);color:#fff}.diff.look{background:#bfe6e3;color:#0e5e5c}
+.card .reg,.fact .k .ic,.c3 .ic,.sidecard dt .ic{color:var(--teal7)}
+.c3.warn .ic{color:var(--rust)}
+section.tint{background:var(--cream2)}
+section.dark,.boat,.sts-net{background:var(--choc)}
+section.dark .eyebrow{color:var(--mustard)}
+.pill.d{background:var(--burnt);border-color:var(--burnt);color:#fff}
+.fact.hard b{color:var(--rust)}
+.step .n{background:var(--choc)}
+.step .st span{background:#f6e6b8;color:#5a3a12}
+.chip3 .ic{color:var(--burnt)}
+.mo.prime{background:var(--avocado);color:#fff}.mo.go{background:#e3e8b4;color:#4a5410}.mo.maybe{background:#fbe0a0;color:#7a4b00}.mo.wait{background:#ecdcb5;color:#7d6a45}
+.legend i[style*="1f5a45"]{background:var(--avocado)!important}
+.go{color:var(--burnt)}
+.stats b,.fact b,.tile b{font-family:"Caprasimo","Archivo",serif;font-weight:400;letter-spacing:0}
+.tile::before{background:linear-gradient(180deg,transparent 25%,rgba(75,43,24,.9))}
+.hero::before,.phead::before,.hero3::before{background:linear-gradient(180deg,rgba(75,43,24,.45) 0%,rgba(40,24,12,.12) 40%,rgba(40,22,10,.88) 100%)}
+.hero,.hero3{overflow:hidden}
+.arcs{position:absolute;right:-34px;bottom:-34px;width:210px;height:210px;pointer-events:none;opacity:.95;z-index:1}
+@media(max-width:800px){.arcs{width:120px;height:120px;right:-22px;bottom:-22px}}
+/* hero slideshow */
+.slides{position:absolute;inset:0;overflow:hidden}
+.slide{position:absolute;inset:0;background:center/cover no-repeat;opacity:0;transition:opacity 1.6s ease,transform 9s ease;transform:scale(1.04)}
+.slide.on{opacity:1;transform:scale(1.12)}
+@media(prefers-reduced-motion:reduce){.slide,.slide.on{transition:opacity .4s;transform:none}}
+.slidebar{position:absolute;left:0;right:0;bottom:1.1rem;z-index:3}
+.slidebar .in{max-width:1240px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;gap:1.4rem;justify-content:flex-start;color:#f3e8cf;font-size:.78rem;flex-wrap:wrap}
+.dots{display:flex;gap:.45rem}
+.dots button{width:34px;height:6px;border:0;border-radius:4px;background:rgba(255,255,255,.35);cursor:pointer;padding:0}
+.dots button.on{background:var(--mustard)}
+.slidecap a{color:#fff;font-weight:700;text-decoration:none;border-bottom:2px solid var(--mustard)}
+@media print{.sts-bar,.sts-nav,.subnav,.sts-net,.side .acts,.hero3 .credit,.stripe{display:none!important}}
+
+.hero h1{font-size:clamp(2.6rem,6vw,5.4rem);max-width:17ch;line-height:1.02}
+.hero .wrap{padding-bottom:5.5rem}
+.hero3 h1{font-size:clamp(2.8rem,7vw,6rem);line-height:1}
+.hero3 .credit a{color:#fff}.hero3 .crumb{position:relative;z-index:2}
+
+/* bigger branding */
+.sts-nav .in{padding:.9rem 1.5rem}
+.sts-logo{gap:1rem}
+.sts-logo img,.sts-logo svg{width:68px;height:68px}
+.sts-logo .w small{font:800 .78rem "Inter",sans-serif;letter-spacing:.36em;color:var(--mustard)}
+.sts-logo .w b{font:400 2.5rem/1 "Caprasimo",Georgia,serif;letter-spacing:0;text-transform:none;margin-top:.3rem;color:#fff;font-variation-settings:normal}
+@media(max-width:700px){.sts-logo img,.sts-logo svg{width:48px;height:48px}.sts-logo .w b{font-size:1.7rem}.sts-logo .w small{font-size:.62rem}}
+.fact .k .ic{color:var(--teal7)}
+.c3 .ic{color:var(--teal7)}
+.card .reg{color:var(--teal7)}
+.eyebrow{color:var(--teal7)}
+
+.notice3{background:#fff4d6;border:1px solid #e9a21c;border-radius:12px;padding:.8rem 1.1rem;margin:1.2rem 0 0;font-size:.88rem;color:#4b2b18}.notice3 a{color:#b83a1c;font-weight:700}
+</style>
 </head>
-<body>
+<body class="g3">
 <div class="sts-bar"><div class="in"><a class="sts-logo" href="https://seatoskytrails.com/" aria-label="Sea to Sky Trails home"><svg viewBox="0 0 64 64" aria-hidden="true"><defs><clipPath id="stsc"><rect width="64" height="64" rx="15"/></clipPath></defs><g clip-path="url(#stsc)"><rect width="64" height="64" fill="#0d1f1c"/><circle cx="45" cy="19" r="6.5" fill="#ee7a35"/><path d="M-4 48 L14 27 L24 37 L35 22 L68 56 L68 70 L-4 70Z" fill="#1d5a49"/><path d="M9 50 L28 14 L47 50 Z" fill="#f6f4ee"/><path d="M28 14 L34 25.5 L30.5 23.5 L28 28 L25.5 23.5 L22 25.5Z" fill="#cfe3e0"/><path d="M27 48.5 L38 43 L20 37.5 L35 32 L22 26.5 L31 22 L28 17.5" fill="none" stroke="#ee7a35" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3.2 3.4"/><path d="M-2 48.5 q6.5 -4.5 13 0 t13 0 t13 0 t13 0 t13 0 t13 0 V70 H-2Z" fill="#7cc4d4"/><path d="M-2 55 q6.5 -4 13 0 t13 0 t13 0 t13 0 t13 0 t13 0" fill="none" stroke="#0d1f1c" stroke-opacity=".28" stroke-width="2"/></g></svg><span class="w"><small>Sea to Sky</small><b>Trails</b></span></a><span class="tag">34 field guides · Howe Sound to Pemberton</span><a class="all" href="https://seatoskytrails.com/#guides">All guides →</a></div></div>
-
-
-<!-- ===================== NAV ===================== -->
-<nav class="top">
-  <div class="inner">
-    <a class="wordmark sts-trailmark" href="#top"><span class="sts-trailname">Edith Lake<small>Field guide</small></span></a>
-    <div class="links">
-      <a href="#notebook">The Notebook</a>
-      <a href="#marks">Field Marks</a>
-      <a href="#fourlakes">The Four Lakes</a>
-      <a href="#year">A Year at the Pond</a>
-      <a href="#faq">Questions</a>
-    </div>
-  </div>
-</nav>
-
-<!-- ===================== HERO — close-focus pond scene ===================== -->
-<header class="hero" aria-label="Illustration of Edith Lake's surface: lily pads, reeds, and a dragonfly">
-  <svg class="hero-svg" viewBox="0 0 1200 460" role="img" aria-label="Hand-drawn pond scene: lily pads and a dragonfly over still water, reeds at the margins">
-    <defs>
-      <linearGradient id="pondwater" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="#c8c9ac"/>
-        <stop offset="0.45" stop-color="#a3ab88"/>
-        <stop offset="1" stop-color="#77835f"/>
-      </linearGradient>
-      <linearGradient id="shallow" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="#8f8262" stop-opacity="0"/>
-        <stop offset="1" stop-color="#6e5c43" stop-opacity="0.55"/>
-      </linearGradient>
-    </defs>
-
-    <!-- water -->
-    <rect x="0" y="0" width="1200" height="460" fill="url(#pondwater)"/>
-    <!-- muddy shallow at foot -->
-    <rect x="0" y="300" width="1200" height="160" fill="url(#shallow)"/>
-
-    <!-- soft light on water -->
-    <ellipse cx="780" cy="120" rx="330" ry="70" fill="#e9e6cf" opacity="0.35"/>
-    <ellipse cx="760" cy="128" rx="220" ry="42" fill="#f2eeda" opacity="0.3"/>
-
-    <!-- ripple rings (dragonfly touch + drips) -->
-    <g fill="none" stroke="#f0edd8" stroke-width="1.6" opacity="0.6">
-      <ellipse cx="815" cy="205" rx="26" ry="7"/>
-      <ellipse cx="815" cy="205" rx="52" ry="14" opacity="0.55"/>
-      <ellipse cx="815" cy="205" rx="82" ry="22" opacity="0.3"/>
-    </g>
-    <g fill="none" stroke="#e7e3cb" stroke-width="1.3" opacity="0.4">
-      <ellipse cx="300" cy="150" rx="30" ry="8"/>
-      <ellipse cx="300" cy="150" rx="58" ry="15" opacity="0.6"/>
-    </g>
-
-    <!-- drifting surface lines -->
-    <g fill="none" stroke="#dcd9bd" stroke-width="1.8" stroke-linecap="round" opacity="0.5">
-      <path d="M60 250 q60 -8 130 0"/>
-      <path d="M980 260 q70 -9 150 -2"/>
-      <path d="M480 100 q50 -6 110 0"/>
-      <path d="M180 330 q80 -10 170 -2" opacity="0.7"/>
-    </g>
-
-    <!-- half-submerged log, lower left -->
-    <g>
-      <path d="M-20 385 C 90 372 210 368 320 378 C 340 380 352 388 350 396 C 250 408 110 410 -20 402 Z" fill="#5c4a33"/>
-      <path d="M-20 385 C 90 372 210 368 320 378" fill="none" stroke="#43351f" stroke-width="2" stroke-linecap="round"/>
-      <path d="M40 384 q60 -5 150 -2 M90 391 q70 -4 160 0" fill="none" stroke="#6f5b40" stroke-width="1.5" opacity="0.7"/>
-      <ellipse cx="322" cy="387" rx="14" ry="9" fill="#7a6547"/>
-      <ellipse cx="322" cy="387" rx="8" ry="5" fill="none" stroke="#43351f" stroke-width="1.2"/>
-      <!-- reflection -->
-      <path d="M-20 410 C 110 418 250 416 348 402 C 250 424 100 428 -20 420 Z" fill="#43351f" opacity="0.25"/>
-    </g>
-
-    <!-- lily pads: large foreground cluster, right -->
-    <g>
-      <!-- big pad with classic notch -->
-      <path d="M 930 350 m -130 0 a 130 54 0 1 0 260 0 a 130 54 0 1 0 -260 0 Z M 930 350 L 1045 316 L 1060 340 Z" fill="#4c6a3a" fill-rule="evenodd"/>
-      <path d="M 930 350 L 1045 316 M 930 350 L 1060 340" stroke="#33472a" stroke-width="1.6" fill="none"/>
-      <path d="M 930 350 l -95 -20 M 930 350 l -105 12 M 930 350 l -40 44 M 930 350 l 50 42 M 930 350 l -80 -38" stroke="#3d5630" stroke-width="1.3" fill="none" opacity="0.8"/>
-      <ellipse cx="930" cy="350" rx="130" ry="54" fill="none" stroke="#33472a" stroke-width="1.8"/>
-
-      <!-- medium pad -->
-      <path d="M 700 300 m -84 0 a 84 34 0 1 0 168 0 a 84 34 0 1 0 -168 0 Z M 700 300 L 770 280 L 780 296 Z" fill="#5a7644" fill-rule="evenodd"/>
-      <ellipse cx="700" cy="300" rx="84" ry="34" fill="none" stroke="#33472a" stroke-width="1.6"/>
-      <path d="M 700 300 l -60 -14 M 700 300 l -66 8 M 700 300 l -26 28 M 700 300 l 34 26" stroke="#3d5630" stroke-width="1.2" fill="none" opacity="0.8"/>
-
-      <!-- small pads drifting mid-water -->
-      <g stroke="#33472a" stroke-width="1.3">
-        <ellipse cx="520" cy="228" rx="46" ry="17" fill="#5f7c49"/>
-        <path d="M 520 228 L 558 218 L 563 227 Z" fill="#77835f"/>
-        <ellipse cx="404" cy="262" rx="34" ry="13" fill="#54703f"/>
-        <ellipse cx="586" cy="188" rx="26" ry="10" fill="#66824e"/>
-      </g>
-      <g stroke="#3a5030" stroke-width="1.2">
-        <ellipse cx="150" cy="196" rx="30" ry="11" fill="#5a7644"/>
-        <ellipse cx="215" cy="232" rx="40" ry="15" fill="#4c6a3a"/>
-        <path d="M 215 232 L 248 222 L 252 231 Z" fill="#6b8352"/>
-      </g>
-
-      <!-- water lily flower on the big pad cluster -->
-      <g transform="translate(806,318)">
-        <ellipse cx="0" cy="16" rx="34" ry="13" fill="#5a7644" stroke="#33472a" stroke-width="1.3"/>
-        <g fill="#f3efdd" stroke="#c9bfa0" stroke-width="1">
-          <path d="M0 2 C -6 -10 -4 -24 0 -30 C 4 -24 6 -10 0 2 Z"/>
-          <path d="M-3 3 C -14 -4 -20 -14 -20 -22 C -12 -20 -4 -10 -3 3 Z"/>
-          <path d="M3 3 C 14 -4 20 -14 20 -22 C 12 -20 4 -10 3 3 Z"/>
-          <path d="M-6 5 C -18 3 -26 -3 -29 -9 C -20 -10 -10 -4 -6 5 Z"/>
-          <path d="M6 5 C 18 3 26 -3 29 -9 C 20 -10 10 -4 6 5 Z"/>
-        </g>
-        <circle cx="0" cy="3" r="3.4" fill="#b98a24"/>
-      </g>
-    </g>
-
-    <!-- reeds, left margin -->
-    <g fill="none" stroke="#33472a" stroke-width="3" stroke-linecap="round">
-      <path d="M 60 460 C 58 360 62 280 78 200"/>
-      <path d="M 96 460 C 98 370 92 300 104 224"/>
-      <path d="M 30 460 C 34 380 30 330 42 264"/>
-      <path d="M 130 460 C 128 390 134 340 128 288"/>
-    </g>
-    <g fill="#33472a">
-      <ellipse cx="79" cy="192" rx="5.5" ry="18" transform="rotate(6 79 192)"/>
-      <ellipse cx="105" cy="216" rx="5" ry="16" transform="rotate(-4 105 216)"/>
-      <ellipse cx="43" cy="256" rx="4.5" ry="14" transform="rotate(5 43 256)"/>
-    </g>
-    <!-- reed blades -->
-    <g fill="none" stroke="#3d5630" stroke-width="2.2" stroke-linecap="round" opacity="0.85">
-      <path d="M 66 460 C 80 380 110 330 150 300"/>
-      <path d="M 20 460 C 26 400 14 360 6 330"/>
-      <path d="M 118 460 C 130 410 156 380 186 362"/>
-    </g>
-    <!-- reed reflections -->
-    <g fill="none" stroke="#2c3d24" stroke-width="2" stroke-linecap="round" opacity="0.22">
-      <path d="M 62 460 q 4 -30 -2 -60"/>
-      <path d="M 98 460 q -3 -26 2 -52"/>
-    </g>
-
-    <!-- reeds, right margin (sparser) -->
-    <g fill="none" stroke="#33472a" stroke-width="2.6" stroke-linecap="round" opacity="0.9">
-      <path d="M 1160 460 C 1158 396 1164 350 1156 306"/>
-      <path d="M 1188 460 C 1190 400 1184 366 1192 330"/>
-    </g>
-    <g fill="#33472a" opacity="0.9">
-      <ellipse cx="1156" cy="298" rx="4.5" ry="14" transform="rotate(-5 1156 298)"/>
-    </g>
-
-    <!-- dragonfly, hovering above the ripple -->
-    <g transform="translate(815,148) rotate(-8)">
-      <!-- wings -->
-      <g fill="#f2eeda" fill-opacity="0.55" stroke="#b98a24" stroke-width="1.2">
-        <ellipse cx="-27" cy="-8" rx="27" ry="7.5" transform="rotate(-16 -27 -8)"/>
-        <ellipse cx="27" cy="-8" rx="27" ry="7.5" transform="rotate(16 27 -8)"/>
-        <ellipse cx="-24" cy="4" rx="24" ry="6.5" transform="rotate(-30 -24 4)"/>
-        <ellipse cx="24" cy="4" rx="24" ry="6.5" transform="rotate(30 24 4)"/>
-      </g>
-      <!-- wing veins -->
-      <g stroke="#b98a24" stroke-width="0.7" opacity="0.6" fill="none">
-        <path d="M-6 -6 L-48 -16 M-6 2 L-44 14 M6 -6 L48 -16 M6 2 L44 14"/>
-      </g>
-      <!-- body -->
-      <path d="M 0 -4 C 3 6 3 26 0 52 C -3 26 -3 6 0 -4 Z" fill="#b98a24"/>
-      <g stroke="#8a651a" stroke-width="1" opacity="0.8">
-        <path d="M-1.8 14 L1.8 14 M-1.6 22 L1.6 22 M-1.4 30 L1.4 30 M-1.1 38 L1.1 38"/>
-      </g>
-      <circle cx="0" cy="-8" r="4.6" fill="#8a651a"/>
-      <circle cx="-2.4" cy="-9.5" r="1.9" fill="#f2eeda" opacity="0.85"/>
-      <circle cx="2.4" cy="-9.5" r="1.9" fill="#f2eeda" opacity="0.85"/>
-    </g>
-
-    <!-- second, distant dragonfly -->
-    <g transform="translate(330,96) rotate(10) scale(0.5)" opacity="0.8">
-      <g fill="#f2eeda" fill-opacity="0.5" stroke="#b98a24" stroke-width="1.4">
-        <ellipse cx="-26" cy="-6" rx="26" ry="7" transform="rotate(-18 -26 -6)"/>
-        <ellipse cx="26" cy="-6" rx="26" ry="7" transform="rotate(18 26 -6)"/>
-      </g>
-      <path d="M 0 -4 C 3 6 3 24 0 46 C -3 24 -3 6 0 -4 Z" fill="#b98a24"/>
-      <circle cx="0" cy="-8" r="4.4" fill="#8a651a"/>
-    </g>
-  </svg>
-</header>
-
-<!-- ===================== PHOTOGRAPH ===================== -->
-<section class="photo-feature" style="padding:2.75rem 0 0;">
-  <div class="wrap">
-    <figure style="margin:0;">
-      <div role="img" aria-label="A wide gravel trail through tall mossy second-growth forest in Alice Lake Provincial Park, the kind of walking that leads to Edith Lake on the Four Lakes Trail" style="background:url('/img/edith-lake-1.jpg') center/cover no-repeat; aspect-ratio:16/9; border-radius:12px; border:1px solid var(--line);"></div>
-      <figcaption style="font-family:'Newsreader',serif; font-style:italic; font-size:0.85rem; color:var(--mute); margin-top:0.6rem;">The forest of Alice Lake Provincial Park &mdash; the walk in, not the pond itself. Photo &mdash; Keely Hill (CC BY-SA 4.0), via Wikimedia Commons.</figcaption>
-    </figure>
-  </div>
-</section>
-
-<!-- ===================== TITLE ===================== -->
-<div class="wrap titleblock">
-  <div class="vol-line"><a href="https://seatoskytrails.com/">Sea to Sky Trails</a> &middot; Field guide</div>
-  <h1>Edith Lake</h1>
-  <p class="deck">The quiet one on the Four Lakes Trail &mdash; lily pads, dragonflies, and a log to sit on while everyone else is at Alice.</p>
-
-  <div class="ribbon" aria-label="Location and trail metadata">
-    <div class="cell"><span class="k">Coordinates</span><span class="v">49.79&deg;&nbsp;N &middot; 123.11&deg;&nbsp;W</span></div>
-    <div class="cell"><span class="k">Elevation</span><span class="v">&asymp; 290 m</span></div>
-    <div class="cell"><span class="k">Four Lakes loop</span><span class="v">&asymp; 6 km</span></div>
-    <div class="cell"><span class="k">Park</span><span class="v">Alice Lake Provincial</span></div>
-    <div class="cell"><span class="k">Nearest town</span><span class="v">Squamish, BC</span></div>
-  </div>
-</div>
-
-<!-- ===================== THE NOTEBOOK ===================== -->
-<section class="notebook" id="notebook">
-  <div class="wrap">
-    <div class="notebook-grid">
-      <div class="essay">
-        <span class="eyebrow">The Notebook</span>
-        <p class="lead">Every busy park keeps one quiet corner, and in Alice Lake Provincial Park that corner is Edith. While the beaches at Alice fill with coolers, floaties, and the general hum of summer water sports, Edith sits a short walk south doing what it has always done: growing lily pads, warming slowly in the sun, and hosting dragonflies.</p>
-        <p class="opener">The Four Lakes Trail is the reason most people meet her. It&rsquo;s a family-grade loop of roughly six kilometres that strings together Stump, Fawn, Edith, and Alice through mossy second-growth forest &mdash; the kind of walk where kids count banana slugs and adults quietly decide this is their favourite hour of the trip. Edith arrives third if you walk it counter-clockwise from the Stump Lake end, and she announces herself gently: the trees open, the light goes green-gold, and there&rsquo;s the pond, patient as furniture.</p>
-        <p>I say pond with affection. Edith is a proper lake, but it keeps pond manners &mdash; still surface, reedy margins, water that holds the sky rather than performing for it. There is usually a log or two along the shore worn smooth by exactly the kind of person who walks fifteen minutes past a busy beach to eat a sandwich in silence. Claim one. The dragonflies will inspect you, decide you&rsquo;re scenery, and get back to patrolling.</p>
-        <div class="marginalia">Field habit worth adopting: arrive with nothing that needs unpacking. Edith rewards the traveller whose whole kit is a snack and a sit.</div>
-        <p>You can swim here, and in high summer you should &mdash; Edith warms up in a way Squamish&rsquo;s glacier-fed lakes never will. Be honest with yourself about what you&rsquo;re getting: no lifeguards, no dock culture, and muddy-bottomed entries that make the first three steps a small act of faith. It is a wade-in-and-commit sort of swim, and the reward is water the temperature of a kind bath compared to anything fed by ice.</p>
-        <p>There&rsquo;s said to be a back way in from the Garibaldi Highlands side, and locals do use routes from that direction &mdash; but access points and parking there change, so treat any old directions with suspicion and check current maps before counting on it. The dependable approach is the one that&rsquo;s also the nicest: on foot, around the loop, from inside the park.</p>
-        <p>The forest around the loop belongs to more than hikers. The trail network here stitches into the surrounding mountain-bike country on the Jack&rsquo;s Trail side, so expect the occasional polite whir of hub and drivetrain through the trees. DeBeck&rsquo;s Hill and its viewpoint sit nearby for those wanting to earn a view &mdash; though trail conditions and access up that way vary, so check current status before building your day around it.</p>
-      </div>
-
-      <aside class="specimen" aria-label="Edith Lake quick reference">
-        <div class="spec-head">Specimen Card &middot; No. 08</div>
-        <dl>
-          <div class="pair"><dt>Character</dt><dd>The introvert&rsquo;s lake</dd></div>
-          <div class="pair"><dt>Swimming</dt><dd>Yes &mdash; warmer water</dd></div>
-          <div class="pair"><dt>Lifeguards</dt><dd>None</dd></div>
-          <div class="pair"><dt>Entries</dt><dd>Muddy-bottomed</dd></div>
-          <div class="pair"><dt>Facilities at Edith</dt><dd>None</dd></div>
-          <div class="pair"><dt>Facilities at Alice</dt><dd>Full frontcountry</dd></div>
-          <div class="pair"><dt>Resident fauna</dt><dd>Dragonflies, at rank</dd></div>
-          <div class="pair"><dt>Best furniture</dt><dd>Shoreline logs</dd></div>
-        </dl>
-        <p class="footnote">Carry out what you carry in &mdash; Edith has no garbage service, no toilets, no taps. The full facilities live at Alice Lake, one easy walk away.</p>
-      </aside>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== PULL QUOTE ===================== -->
-<div class="narrow">
-  <div class="pull">
-    <blockquote>&ldquo;Alice is where the park swims. Edith is where the park thinks.&rdquo;</blockquote>
-    <div class="attr">Notebook, mid-July</div>
-  </div>
-</div>
-
-<!-- ===================== FIELD MARKS ===================== -->
-<section class="marks" id="marks">
-  <div class="wrap">
-    <span class="eyebrow">Field Marks</span>
-    <div class="marks-intro">
-      <h2>How to know you&rsquo;ve found the right lake.</h2>
-    </div>
-
-    <div class="marks-list">
-
-      <div class="mark-entry">
-        <div class="plate">
-          <svg viewBox="0 0 88 88" aria-hidden="true">
-            <ellipse class="sketchline" cx="44" cy="50" rx="30" ry="13"/>
-            <path class="sketchline" d="M44 50 L70 41 M44 50 L73 48"/>
-            <path class="sketchline faint" d="M44 50 l-22 -6 M44 50 l-24 4 M44 50 l-8 11 M44 50 l12 10"/>
-            <ellipse class="sketchline faint" cx="20" cy="68" rx="12" ry="5"/>
-            <ellipse class="sketchline faint" cx="70" cy="70" rx="9" ry="4"/>
-          </svg>
-          <span class="plate-n">fig. 1</span>
-        </div>
-        <div>
-          <h3>Lily pads</h3>
-          <p>Rafts of them, ribbed like umbrellas, each with the tailor&rsquo;s notch cut toward the stem. Alice doesn&rsquo;t do this. Edith does little else.</p>
-        </div>
-      </div>
-
-      <div class="mark-entry">
-        <div class="plate">
-          <svg viewBox="0 0 88 88" aria-hidden="true">
-            <g transform="translate(44,38)">
-              <ellipse class="sketchgold" cx="-17" cy="-5" rx="16" ry="5" transform="rotate(-18 -17 -5)"/>
-              <ellipse class="sketchgold" cx="17" cy="-5" rx="16" ry="5" transform="rotate(18 17 -5)"/>
-              <ellipse class="sketchgold" cx="-14" cy="4" rx="13" ry="4.5" transform="rotate(-32 -14 4)"/>
-              <ellipse class="sketchgold" cx="14" cy="4" rx="13" ry="4.5" transform="rotate(32 14 4)"/>
-              <path class="sketchline" d="M0 -3 C 2 5 2 18 0 32 C -2 18 -2 5 0 -3 Z"/>
-              <circle class="sketchline" cx="0" cy="-7" r="3.4"/>
-            </g>
-            <path class="sketchline faint" d="M20 74 q12 -4 26 0 q12 4 24 0"/>
-          </svg>
-          <span class="plate-n">fig. 2</span>
-        </div>
-        <div>
-          <h3>Dragonflies on patrol</h3>
-          <p>Blue darners and golden skimmers running flight laps over the shallows all summer. Where there are lily pads and warm still water, there is an air force.</p>
-        </div>
-      </div>
-
-      <div class="mark-entry">
-        <div class="plate">
-          <svg viewBox="0 0 88 88" aria-hidden="true">
-            <path class="sketchline" d="M10 56 C 30 50 58 49 76 54"/>
-            <path class="sketchline" d="M10 64 C 30 60 58 59 76 62 M10 56 L10 64 M76 54 L76 62"/>
-            <ellipse class="sketchline" cx="76" cy="58" rx="3" ry="4"/>
-            <path class="sketchline faint" d="M22 58 q16 -3 34 -1 M18 61 q20 -2 42 0"/>
-            <path class="sketchline faint" d="M6 72 q20 -5 38 0 q20 5 40 0"/>
-          </svg>
-          <span class="plate-n">fig. 3</span>
-        </div>
-        <div>
-          <h3>Log seating, one per thinker</h3>
-          <p>Shoreline logs polished by years of quiet sitting. The park&rsquo;s best furniture, first come, first seated &mdash; sandwiches strongly indicated.</p>
-        </div>
-      </div>
-
-      <div class="mark-entry">
-        <div class="plate">
-          <svg viewBox="0 0 88 88" aria-hidden="true">
-            <path class="sketchline" d="M8 40 q18 -6 36 -2 q20 5 36 1"/>
-            <path class="sketchline faint" d="M12 50 q18 -4 32 -1 q18 4 32 1"/>
-            <path class="sketchline" d="M30 62 q4 -8 10 -9 q7 -1 9 6 q1 6 -5 8 q-9 3 -14 -5 Z"/>
-            <path class="sketchline faint" d="M52 66 q3 -5 8 -5 M24 70 q4 -3 9 -3"/>
-          </svg>
-          <span class="plate-n">fig. 4</span>
-        </div>
-        <div>
-          <h3>The muddy launch</h3>
-          <p>Entries are soft-bottomed &mdash; your first steps in will be squelchy and opinion-forming. Commit early, swim past it, forgive the lake.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===================== THE FOUR LAKES ===================== -->
-<section class="ledger" id="fourlakes">
-  <div class="wrap">
-    <span class="eyebrow">The Four Lakes</span>
-    <h2>One loop, four temperaments.</h2>
-    <p style="max-width:56ch; margin-top:1rem;">The loop&rsquo;s roughly six kilometres of mossy forest visit four lakes with four entirely different personalities. Walk all of them; keep your favourite to yourself.</p>
-
-    <div style="margin-top:2rem;">
-      <div class="ledger-row">
-        <div class="n">i</div>
-        <div class="name">Stump Lake</div>
-        <div class="desc">The opener &mdash; snags standing in the water, herons if you&rsquo;re lucky, and a shoreline path that sets the loop&rsquo;s unhurried tone.</div>
-        <div class="go"></div>
-      </div>
-      <div class="ledger-row">
-        <div class="n">ii</div>
-        <div class="name">Fawn Lake</div>
-        <div class="desc">Small, shy, and easy to walk straight past &mdash; which is precisely its charm. Blink and it&rsquo;s back to being forest.</div>
-        <div class="go"></div>
-      </div>
-      <div class="ledger-row">
-        <div class="n">iii</div>
-        <div class="name">Edith Lake <span class="tag">You are here</span></div>
-        <div class="desc">The introvert. Lily pads, dragonflies, warm still water, and the best quiet sitting in the park.</div>
-        <div class="go"></div>
-      </div>
-      <div class="ledger-row">
-        <div class="n">iv</div>
-        <div class="name">Alice Lake</div>
-        <div class="desc">The headliner &mdash; beaches, picnic lawns, the campground, and the crowds that make Edith feel like a secret. It has a full field guide of its own.</div>
-        <div class="go"><a href="https://alicelakesquamish.com/">Read the Alice Lake guide</a></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== A YEAR AT THE POND ===================== -->
-<section class="seasons" id="year">
-  <div class="narrow">
-    <span class="eyebrow">A Year at the Pond</span>
-    <h2>When to come, and what Edith is doing when you do.</h2>
-
-    <div class="season-table">
-      <div class="season-row">
-        <div class="s">April &ndash; May</div>
-        <div class="d">The forest drips, the trail is soft, and you may have the whole loop to yourself. The lake is cold and the lily pads are still filing paperwork. Note: the canoe rental hut at Alice Lake is closed these months &mdash; see below if you were planning to paddle.</div>
-      </div>
-      <div class="season-row">
-        <div class="s">June</div>
-        <div class="d">Everything greens at once. Dragonflies begin patrols; the water starts its slow climb toward swimmable. Campground bookings at Alice are already competitive &mdash; reserve through BC Parks.</div>
-      </div>
-      <div class="season-row">
-        <div class="s">July &ndash; August</div>
-        <div class="d">Peak Edith. Warm water, full lily coverage, maximum dragonfly traffic &mdash; and maximum crowds fifteen minutes away at Alice, which is exactly why you&rsquo;re here instead. Weekday mornings are the connoisseur&rsquo;s slot.</div>
-      </div>
-      <div class="season-row">
-        <div class="s">September &ndash; October</div>
-        <div class="d">Gold light, cooling water, thinning crowds. The last warm swims happen in early September for the committed. After that, Edith goes back to thinking.</div>
-      </div>
-    </div>
-
-    <div class="paddle-aside">
-      <div class="ph">Practical Aside &middot; Early-Season Paddlers</div>
-      <p>If part of your Alice Lake plan is getting on the water, know that the rental hut at Alice Lake sits closed through April and May &mdash; early-season visitors arrive to locked paddles more often than you&rsquo;d think. <a class="u" href="https://squamishcanoerental.com/">Squamish Canoe Rental</a> in town runs year-round instead; their canoes seat up to three, and you can <a class="u" href="https://rentedlocal.com/Profile?userId=698a2b3bca1e37a683b7bfeb" target="_blank" rel="noopener">book online</a> before you drive up. (Edith herself is a walk-in lake &mdash; the paddling happens at Alice or on the bigger water nearby.)</p>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== HONEST NOTE ===================== -->
-<section class="honest">
-  <div class="narrow">
-    <span class="eyebrow">Honest Note</span>
-    <h2>What the brochures leave out.</h2>
-    <p style="margin-top:1.4rem;">Edith is not a spectacle. If your group needs a beach, a boat launch, and somewhere to buy ice cream, that is <em>Alice</em>, and there is no shame in it &mdash; that&rsquo;s what the headliner is for. Come to Edith for the opposite of all that.</p>
-    <p>The swimming is honest, not groomed: <em>no lifeguards, ever</em>, and the muddy entries mean nobody strides in looking graceful. Keep small kids close, and treat every swim like the unsupervised swim it is.</p>
-    <p>There are no facilities at the lake itself &mdash; no toilets, no bins, no water. Whatever you carry in comes back out with you, orange peels and all. The park&rsquo;s full frontcountry setup (and its very popular campground &mdash; book through the BC Parks reservation system, well ahead) is at Alice Lake.</p>
-    <p>And on shared trails: the loop touches mountain-bike country on the Jack&rsquo;s Trail side, so stay aware on the connectors, and if you&rsquo;re eyeing DeBeck&rsquo;s Hill for a viewpoint, <em>check current trail status first</em> &mdash; conditions and access there change.</p>
-  </div>
-</section>
-
-<!-- ===================== FAQ ===================== -->
-<section class="faq" id="faq">
-  <div class="narrow">
-    <span class="eyebrow">Questions &amp; Answers</span>
-    <h2>What people ask about Edith Lake.</h2>
-
-    <div class="faq-list">
-
-      <details class="q">
-        <summary><span class="fig">i.</span><span>Can you swim in Edith Lake?</span><span class="tip">+</span></summary>
-        <div class="ans"><p>Yes &mdash; and it&rsquo;s one of the warmer swims in the Squamish area, since Edith isn&rsquo;t glacier-fed. Expect muddy-bottomed entries (the first few steps are soft) and no lifeguards at any time. Best swimming is July through early September.</p></div>
-      </details>
-
-      <details class="q">
-        <summary><span class="fig">ii.</span><span>How do I get to Edith Lake?</span><span class="tip">+</span></summary>
-        <div class="ans"><p>The classic way is on foot via the Four Lakes Trail inside Alice Lake Provincial Park &mdash; a roughly 6 km family-friendly loop linking Stump, Fawn, Edith, and Alice lakes through mossy forest. Park at Alice Lake and walk. There are also routes in from the Garibaldi Highlands side, but access and parking there change &mdash; check a current map rather than relying on old directions.</p></div>
-      </details>
-
-      <details class="q">
-        <summary><span class="fig">iii.</span><span>How long is the Four Lakes Trail, and is it good for kids?</span><span class="tip">+</span></summary>
-        <div class="ans"><p>About 6 km for the full loop, on well-maintained trail with gentle grades &mdash; one of the best family walks in the corridor. Most parties take two to three unhurried hours with snack stops. You can also shortcut to individual lakes if small legs run out of loop.</p></div>
-      </details>
-
-      <details class="q">
-        <summary><span class="fig">iv.</span><span>Are there toilets, picnic tables, or a beach at Edith Lake?</span><span class="tip">+</span></summary>
-        <div class="ans"><p>No &mdash; Edith itself has no facilities. The shoreline furniture is logs, and the rule is carry out what you carry in. Full frontcountry facilities (beaches, toilets, picnic areas, the campground) are at Alice Lake, a short walk away on the same loop. See the <a class="u" href="https://alicelakesquamish.com/">Alice Lake field guide</a> for that side of the park.</p></div>
-      </details>
-
-      <details class="q">
-        <summary><span class="fig">v.</span><span>Can I camp at Edith Lake?</span><span class="tip">+</span></summary>
-        <div class="ans"><p>Not at Edith &mdash; camping in the park is at the Alice Lake campground, which is popular enough that it books out well in advance. Reserve through the BC Parks reservation system as early as your dates allow, especially for summer weekends.</p></div>
-      </details>
-
-      <details class="q">
-        <summary><span class="fig">vi.</span><span>Can I rent a canoe at Alice Lake?</span><span class="tip">+</span></summary>
-        <div class="ans"><p>In season, yes &mdash; but the rental hut at Alice Lake is closed in April and May, which catches early-season visitors out every year. If you want to paddle in spring (or want certainty any time), <a class="u" href="https://squamishcanoerental.com/">Squamish Canoe Rental</a> in town operates year-round &mdash; canoes seat up to three &mdash; and takes bookings online. Edith itself is better sat beside than paddled.</p></div>
-      </details>
-
-      <details class="q">
-        <summary><span class="fig">vii.</span><span>Is Edith Lake really quieter than Alice?</span><span class="tip">+</span></summary>
-        <div class="ans"><p>Reliably. Alice absorbs the beach crowds, the campground, and nearly all the day-use energy; Edith is far enough along the trail that only walkers arrive, and most of them keep moving. On a summer Saturday when Alice is elbow-to-elbow, Edith is usually a handful of people and several thousand dragonflies.</p></div>
-      </details>
-
-      <details class="q">
-        <summary><span class="fig">viii.</span><span>Can I mountain bike near Edith Lake?</span><span class="tip">+</span></summary>
-        <div class="ans"><p>The trail network around the park connects into the surrounding mountain-bike country on the Jack&rsquo;s Trail side, so riders and walkers share some connectors. If you&rsquo;re adding the DeBeck&rsquo;s Hill viewpoint to your day, check current trail status first &mdash; conditions and access up that way vary.</p></div>
-      </details>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===================== FOOTER ===================== -->
-<footer class="colophon">
-  <div class="wrap">
-    <div class="foot-cols">
-      <div>
-        <h4>About this guide</h4>
-        <p>Edith Lake is entry No.&nbsp;08 in Part of the <a class="u" href="https://seatoskytrails.com/">Sea to Sky Trails</a> &mdash; a slow-built set of field guides to the lakes, trails, and quiet corners of the corridor. Part of the Sea to Sky Trails.</p>
-      </div>
-      <div>
-        <h4>More Field Guides</h4>
-        <ul>
-          <li><a href="https://alicelakesquamish.com/">Alice Lake &mdash; the headliner next door</a></li>
-          <li><a href="https://brohmlake.ca/">Brohm Lake</a></li>
-          <li><a href="https://levettelake.com/">Levette Lake</a></li>
-          <li><a href="https://lakelovelywater.com/">Lake Lovely Water</a></li>
-          <li><a href="https://seatoskytrails.com/">All guides &rarr;</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>On the water</h4>
-        <ul>
-          <li><a href="https://squamishcanoerental.com/">Squamish Canoe Rental &mdash; year-round</a></li>
-          <li><a href="https://squamishwatertaxi.com/tours.html" target="_blank" rel="noopener">Squamish Water Taxi tours</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="territory">Edith Lake lies within the territory of the Sḵwx̱wú7mesh Úxwumixw (Squamish Nation), whose people have known these lakes far longer than any trail sign.</div>
-
-    <div class="colo-line">
-      <div><em>Sea to Sky Trails</em> &middot; Field guide &middot; edithlake.com</div>
-      <div>Set in Newsreader &amp; Inter. Reader-funded.</div>
-    </div>
-  </div>
-</footer>
-
-<!-- ===================== STRUCTURED DATA ===================== -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "TouristAttraction",
-  "name": "Edith Lake",
-  "url": "https://edithlake.com/",
-  "description": "Edith Lake is the quiet lake on the Four Lakes Trail in Alice Lake Provincial Park near Squamish, BC — known for lily pads, dragonflies, warm swimming, and its calm contrast to busy Alice Lake.",
-  "geo": { "@type": "GeoCoordinates", "latitude": 49.79, "longitude": -123.11 },
-  "address": { "@type": "PostalAddress", "addressLocality": "Squamish", "addressRegion": "BC", "addressCountry": "CA" },
-  "isAccessibleForFree": true,
-  "containedInPlace": { "@type": "Place", "name": "Alice Lake Provincial Park" },
-  "touristType": ["Hikers", "Families", "Swimmers", "Nature watchers"]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "Can you swim in Edith Lake?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, and it is one of the warmer swims in the Squamish area since Edith is not glacier-fed. Expect muddy-bottomed entries and no lifeguards at any time. Best swimming is July through early September." } },
-    { "@type": "Question", "name": "How do I get to Edith Lake?", "acceptedAnswer": { "@type": "Answer", "text": "The classic way is on foot via the Four Lakes Trail inside Alice Lake Provincial Park, a roughly 6 km family-friendly loop linking Stump, Fawn, Edith, and Alice lakes through mossy forest. Park at Alice Lake and walk. There are also routes in from the Garibaldi Highlands side, but access and parking there change, so check a current map." } },
-    { "@type": "Question", "name": "How long is the Four Lakes Trail, and is it good for kids?", "acceptedAnswer": { "@type": "Answer", "text": "About 6 km for the full loop on well-maintained trail with gentle grades, one of the best family walks in the corridor. Most parties take two to three unhurried hours, and you can shortcut to individual lakes." } },
-    { "@type": "Question", "name": "Are there toilets, picnic tables, or a beach at Edith Lake?", "acceptedAnswer": { "@type": "Answer", "text": "No. Edith itself has no facilities, and the rule is carry out what you carry in. Full frontcountry facilities, including beaches, toilets, picnic areas, and the campground, are at Alice Lake a short walk away on the same loop." } },
-    { "@type": "Question", "name": "Can I camp at Edith Lake?", "acceptedAnswer": { "@type": "Answer", "text": "Not at Edith. Camping in the park is at the Alice Lake campground, which books out well in advance. Reserve through the BC Parks reservation system as early as your dates allow, especially for summer weekends." } },
-    { "@type": "Question", "name": "Can I rent a canoe at Alice Lake?", "acceptedAnswer": { "@type": "Answer", "text": "In season, yes, but the rental hut at Alice Lake is closed in April and May, which catches early-season visitors out. Squamish Canoe Rental in town operates year-round, with canoes seating up to three paddlers, and takes bookings online." } },
-    { "@type": "Question", "name": "Is Edith Lake really quieter than Alice Lake?", "acceptedAnswer": { "@type": "Answer", "text": "Reliably. Alice absorbs the beach crowds, campground, and nearly all day-use energy; Edith is far enough along the trail that only walkers arrive. On a busy summer Saturday, Edith usually holds a handful of people and a great many dragonflies." } },
-    { "@type": "Question", "name": "Can I mountain bike near Edith Lake?", "acceptedAnswer": { "@type": "Answer", "text": "The trail network around the park connects into the surrounding mountain-bike trails on the Jack's Trail side, so riders and walkers share some connectors. If adding the DeBeck's Hill viewpoint, check current trail status first, since conditions and access vary." } }
-  ]
-}
-</script>
-
+<header class="hero3" style="background-image:url(/img/edith-lake-1.jpg)"><svg class="arcs" viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke-width="14"><circle cx="200" cy="200" r="170" stroke="#e9a21c"/><circle cx="200" cy="200" r="150" stroke="#e0571e"/><circle cx="200" cy="200" r="130" stroke="#ff5fa2"/><circle cx="200" cy="200" r="110" stroke="#b83a1c"/></g></svg><div class="wide">
+<div class="crumb"><a href="https://seatoskytrails.com/">Sea to Sky Trails</a> › <a href="https://seatoskytrails.com/squamish/">Squamish</a> › Edith Lake</div>
+<div class="tags"><span class="pill d">Easy</span><span class="pill">Alice Lake park</span><span class="pill">Four Lakes Trail</span><span class="pill">Quiet lake</span></div>
+<h1>Edith Lake</h1><p class="sub">The quiet lake on the Four Lakes Trail in Alice Lake Provincial Park: easy walking, and park rules to know.</p></div><div class="credit">Alice Lake Provincial Park trail · Photo: Keely Hill (CC BY-SA 4.0), via Wikimedia Commons</div></header>
+<div class="wide facts3"><div class="row"><div class="fact "><span class="k"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16a8 8 0 1 1 16 0"/><path d="M12 16l4-5"/><circle cx="12" cy="16" r="1.4"/></svg>Difficulty</span><b>Easy</b><small>Gentle forest trail</small></div><div class="fact "><span class="k"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M8 18h6a3.5 3.5 0 0 0 0-7h-4a3.5 3.5 0 0 1 0-7h6"/></svg>Four Lakes loop</span><b>≈ 6 km</b><small>Our notes; BC Parks gives none</small></div><div class="fact "><span class="k"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.800 12 21 12 21z"/><circle cx="12" cy="9.500" r="2.500"/></svg>Park</span><b>Alice Lake</b><small>Provincial park</small></div><div class="fact "><span class="k"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 20c-2 0-3-1.5-3-3.5S6.5 11 9 11s3 2 3 4.5S10 20 8 20z"/><path d="M15 15c-1.5 0-2.5-1-2.5-2.5S14 8 16 8s2.5 1.5 2.5 3.5S17 15 15 15z"/></svg>Cycling</span><b>Restricted</b><small>See BC Parks closures</small></div><div class="fact "><span class="k"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h2M8 20v-4M13 20v-8M18 20V8"/><path d="M3 3l18 18"/></svg>Dogs</span><b>Leashed</b><small>Not on Alice Lake Trail</small></div><div class="fact "><span class="k"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg>Quiet hours</span><b>10 pm – 7 am</b><small>In the park</small></div></div></div>
+<nav class="subnav" aria-label="Guide sections"><div class="in"><a href="#overview">Overview</a><a href="#getting-there">Getting there</a><a href="#safety">Rules</a><a href="#faq">Questions</a><a href="#essentials">Safety checklist</a><a href="#sources">Sources & disclaimer</a><a class="cta" href="/downloads/edith-lake.pdf" download>Download PDF</a></div></nav>
+<div class="wide"><div class="notice3">This guide is general information, last checked November 18, 2026. Conditions, access and rules change, and some figures differ between sources. Outdoor recreation is risky. Check the land manager before you go, and read the <a href="https://seatoskytrails.com/disclaimer/">full disclaimer</a>.</div></div>
+<div class="wide"><div class="main3"><main><section class="sec" id="overview"><h2>Overview</h2><p class="lead3">Edith Lake is one of the lakes on the Four Lakes Trail in Alice Lake Provincial Park near Squamish. BC Parks names the Four Lakes Trail, Alice Lake Loop, Mike's Loop and Stump Lake Loop but gives no distances; local guides put the Four Lakes loop at about 6 km.</p><p>Our <a href="https://alicelakesquamish.com/">Alice Lake guide</a> covers the park's beaches, campground and rules in detail.</p><div class="chips"><span class="chip3"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M8 18h6a3.5 3.5 0 0 0 0-7h-4a3.5 3.5 0 0 1 0-7h6"/></svg>Four Lakes Trail</span><span class="chip3"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 20c-2 0-3-1.5-3-3.5S6.5 11 9 11s3 2 3 4.5S10 20 8 20z"/><path d="M15 15c-1.5 0-2.5-1-2.5-2.5S14 8 16 8s2.5 1.5 2.5 3.5S17 15 15 15z"/></svg>Cycling limits</span><span class="chip3"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h2M8 20v-4M13 20v-8M18 20V8"/><path d="M3 3l18 18"/></svg>Leashed dogs</span><span class="chip3"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.800 12 21 12 21z"/><circle cx="12" cy="9.500" r="2.500"/></svg>Alice Lake park</span></div></section><section class="sec" id="getting-there"><h2>Getting there</h2><div class="cards3"><div class="c3"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 16l1.500-5h11L19 16"/><rect x="3" y="16" width="18" height="3" rx="1.500"/><circle cx="7.500" cy="19" r="1"/><circle cx="16.500" cy="19" r="1"/></svg><h3>Alice Lake Provincial Park</h3><p>The park is off Highway 99 north of Squamish, reached by paved road. The nearest store is 6 km away in Brackendale, per BC Parks.</p></div><div class="c3"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg><h3>Reservations</h3><p>BC Parks strongly advises reserving campsites for July through September.</p></div></div></section><section class="sec" id="safety"><h2>Rules</h2><div class="cards3"><div class="c3 warn"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 20c-2 0-3-1.5-3-3.5S6.5 11 9 11s3 2 3 4.5S10 20 8 20z"/><path d="M15 15c-1.5 0-2.5-1-2.5-2.5S14 8 16 8s2.5 1.5 2.5 3.5S17 15 15 15z"/></svg><h3>Cycling</h3><p>Cycling is closed on the Edith Lake to South Beach section of the Four Lakes Trail. The rest of the Four Lakes Trail is closed to cycling May 1 to September 15.</p></div><div class="c3 warn"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h2M8 20v-4M13 20v-8M18 20V8"/><path d="M3 3l18 18"/></svg><h3>Dogs</h3><p>Dogs must be leashed. They are allowed in the campground but not on the Alice Lake Trail, beaches, playground, picnic or day-use areas, or in park buildings.</p></div><div class="c3 warn"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg><h3>Quiet hours</h3><p>Quiet hours are 10 pm to 7 am.</p></div></div></section><section class="sec" id="faq"><h2>Questions</h2><div class="faq3"><details><summary>How long is the Four Lakes Trail?</summary><p>BC Parks does not give a distance. Local guides put the loop at about 6 km.</p></details><details><summary>Can I bike the trail?</summary><p>Cycling is closed on the Edith Lake to South Beach section, and the rest of the Four Lakes Trail is closed to cycling May 1 to September 15.</p></details><details><summary>Can I bring my dog?</summary><p>On a leash, but not on the Alice Lake Trail, beaches, playground or picnic areas.</p></details></div></section><section class="sec" id="essentials"><h2>Safety checklist</h2><div class="cards3"><div class="c3"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg><h3>Tell someone your plan</h3><p>Leave your route, group size and expected return time with someone you trust, and check in when you are back. BC AdventureSmart (adventuresmart.ca) has a free trip-plan form.</p></div><div class="c3"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l9 16H3z"/><path d="M12 10v5M12 18v.01"/></svg><h3>Check conditions the same day</h3><p>Look at the weather, road and trail conditions, closures and (in snow season) the avalanche forecast on the day you go, not last week. Use the land manager's page for this guide.</p></div><div class="c3"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg><h3>Set a turnaround time</h3><p>Pick a time to turn back whatever happens, start early, and carry a headlamp. Most trips go wrong in the last hours of the day.</p></div><div class="c3"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg><h3>Carry the essentials</h3><p>Water, food, navigation (map and offline GPS), light, first aid, extra layers, sun protection, a whistle and fire or shelter. A phone alone is not a plan.</p></div><div class="c3"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h2M8 20v-4M13 20v-8M18 20V8"/><path d="M3 3l18 18"/></svg><h3>Emergencies</h3><p>Call 911. Cell coverage is unreliable or absent in much of the Sea to Sky backcountry, so consider a satellite messenger and know your location.</p></div><div class="c3"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12c3-4 6 4 9 0s6 4 9 0"/><path d="M3 17c3-4 6 4 9 0s6 4 9 0"/></svg><h3>Water and wildlife</h3><p>Wear a life jacket on the water: cold water can disable you in minutes. Carry bear spray where bears are present, keep food secured and give wildlife space.</p></div></div></section><section class="sec" id="sources"><h2>Sources & disclaimer</h2><p>This guide draws on <a href="https://bcparks.ca/alice-lake-park/">BC Parks: Alice Lake Park</a>; our own field notes.</p><p class="fine">Last checked November 18, 2026. Figures marked ≈ are approximate, and sources sometimes disagree. Always confirm with the land manager before you go.</p><p class="fine">Outdoor recreation involves risk, including serious injury and death. This guide is general information compiled from the public sources listed above and was last checked on November 18, 2026. Conditions, access, closures, fees and rules change, and some figures differ between sources. It is not a substitute for current information from the land manager, for proper skills, equipment and preparation, or for your own judgment. You are responsible for your own safety and decisions. To the extent permitted by law, Sea to Sky Trails and its authors accept no liability for loss, injury or damage arising from use of this guide.</p></section></main>
+<aside class="side"><div class="sidecard"><h3>Trip details</h3><dl><div class="r"><dt><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.800 12 21 12 21z"/><circle cx="12" cy="9.500" r="2.500"/></svg>Park</dt><dd>Alice Lake Provincial Park</dd></div><div class="r"><dt><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 16l1.500-5h11L19 16"/><rect x="3" y="16" width="18" height="3" rx="1.500"/><circle cx="7.500" cy="19" r="1"/><circle cx="16.500" cy="19" r="1"/></svg>Access</dt><dd>Paved, off Highway 99 north of Squamish</dd></div><div class="r"><dt><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M8 18h6a3.5 3.5 0 0 0 0-7h-4a3.5 3.5 0 0 1 0-7h6"/></svg>Four Lakes loop</dt><dd>≈ 6 km (our notes)</dd></div><div class="r"><dt><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 20c-2 0-3-1.5-3-3.5S6.5 11 9 11s3 2 3 4.5S10 20 8 20z"/><path d="M15 15c-1.5 0-2.5-1-2.5-2.5S14 8 16 8s2.5 1.5 2.5 3.5S17 15 15 15z"/></svg>Cycling</dt><dd>Closed on Edith Lake to South Beach</dd></div><div class="r"><dt><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h2M8 20v-4M13 20v-8M18 20V8"/><path d="M3 3l18 18"/></svg>Dogs</dt><dd>Leashed; not on Alice Lake Trail</dd></div><div class="r"><dt><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.800 12 21 12 21z"/><circle cx="12" cy="9.500" r="2.500"/></svg>Store</dt><dd>6 km away in Brackendale</dd></div></dl><div class="acts"><a class="btn3 o" href="/downloads/edith-lake.pdf" download>⬇ Download for offline (PDF)</a><a class="btn3 o" href="https://www.google.com/maps/search/?api=1&query=Alice+Lake+Provincial+Park" target="_blank" rel="noopener">Open in Google Maps</a></div></div></aside>
+</div></div>
 <aside class="sts-net"><div class="wrap2"><span class="ey">More Sea to Sky field guides</span><h2>Keep exploring the corridor</h2><div class="g"><a class="c" href="https://alicelakesquamish.com/"><img src="https://seatoskytrails.com/img/trails/alice-lake-sm.jpg" alt="Alice Lake" loading="lazy" width="760" height="506"><div><small>Squamish · Paddle & Swim</small><b>Alice Lake</b></div></a><a class="c" href="https://echolakesquamish.com/"><img src="https://seatoskytrails.com/img/trails/echo-lake-sm.jpg" alt="Echo Falls &amp; Echo Lake" loading="lazy" width="760" height="506"><div><small>Squamish · Paddle + Hike</small><b>Echo Falls &amp; Echo Lake</b></div></a><a class="c" href="https://squamishestuary.ca/"><img src="https://seatoskytrails.com/img/trails/squamish-estuary-sm.jpg" alt="The Squamish Estuary" loading="lazy" width="760" height="506"><div><small>Squamish · Estuary Paddle</small><b>The Squamish Estuary</b></div></a><a class="c" href="https://seatoskytrails.com/trails/black-tusk/"><img src="https://seatoskytrails.com/img/trails/black-tusk-sm.jpg" alt="Black Tusk" loading="lazy" width="760" height="506"><div><small>Garibaldi · Alpine Hike</small><b>Black Tusk</b></div></a><a class="c" href="https://levettelake.com/"><img src="https://seatoskytrails.com/img/trails/levette-lake-sm.jpg" alt="Levette Lake" loading="lazy" width="760" height="506"><div><small>Tantalus · Paddle & Swim</small><b>Levette Lake</b></div></a><a class="c" href="https://cheakamuslake.com/"><img src="https://seatoskytrails.com/img/trails/cheakamus-lake-sm.jpg" alt="Cheakamus Lake" loading="lazy" width="760" height="506"><div><small>Whistler · Lakeside Hike</small><b>Cheakamus Lake</b></div></a></div>
 <div class="more"><a class="p" href="https://seatoskytrails.com/#guides">Browse all 34 guides →</a><a href="https://seatoskytrails.com/squamish/">More in Squamish</a><a href="https://seatoskytrails.com/paddling/">Paddling guides</a><a href="https://seatoskytrails.com/easy-hikes/">Easy hikes</a><a href="https://seatoskytrails.com/big-days/">Big days</a></div>
 <div class="fine">Edith Lake is part of Sea to Sky Trails, independent field guides to the lakes, hikes and paddles between Howe Sound and Pemberton, BC. Rules, passes and closures change: confirm with BC Parks or the land manager before you go.</div></div></aside>
+
+<div class="sts-disc"><style>.sts-disc{background:#2a1a10;color:#cdbb9b;font:500 .78rem/1.6 Inter,system-ui,sans-serif;padding:1.4rem 1.5rem;text-align:center}.sts-disc p{max-width:90ch;margin:0 auto}.sts-disc a{color:#e9a21c;text-decoration:underline}</style><p>Outdoor recreation involves risk, including serious injury and death. These guides are general information from public sources, were last checked November 18, 2026, may be out of date or wrong, and are not a substitute for current information from the land manager, proper skills and equipment, or your own judgment. Sea to Sky Trails is independent and not affiliated with BC Parks or any land manager. <a href="https://seatoskytrails.com/disclaimer/">Read the full disclaimer</a>.</p></div>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7328f367bdb24462944df9fc4c973e46"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
